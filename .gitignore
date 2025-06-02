@@ -2,3 +2,4 @@ venv/
 __pycache__/ 
 *.pyc 
 .idea/ 
+trained_model/model.safetensors 
