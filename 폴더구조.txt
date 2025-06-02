@@ -1,5 +1,5 @@
 cjCategoryMapping/
-├─ ui.py
+├─ ui.pyq
 ├─ main.py
 ├─ build_faiss_index.py
 ├─ train_model.py
@@ -20,3 +20,6 @@ faiss_index.bin와 faiss_mapping.json
 python init_train.py               # 최초 모델 학습
 python build_faiss_index.py        # 인덱스 구축
 python ui.py                       # UI 실행
+
+
+git 테스트용
