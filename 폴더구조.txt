@@ -1,5 +1,5 @@
 cjCategoryMapping/
-├─ ui.pyq
+├─ ui.py
 ├─ main.py
 ├─ build_faiss_index.py
 ├─ train_model.py
