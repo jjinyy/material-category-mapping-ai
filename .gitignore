@@ -1,5 +1,13 @@
-venv/ 
-__pycache__/ 
-*.pyc 
-.idea/ 
-trained_model/model.safetensors 
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+venv/
+
+# IDE Settings
+.idea/
+.vscode/
+
+# System files
+.DS_Store
