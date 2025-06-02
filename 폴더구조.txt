@@ -1,0 +1,22 @@
+cjCategoryMapping/
+├─ ui.py
+├─ main.py
+├─ build_faiss_index.py
+├─ train_model.py
+├─ generate_training_data.py
+├─ trained_model/       : 학습된 모델 저장 폴더
+├─ feedback.csv         : 사용자 피드백 데이터 (빈 CSV라도 존재해야 함)
+├─ faiss_index.bin      : 인덱싱된 벡터 파일 (없으면 에러, build로 생성 필요)
+├─ faiss_mapping.json   : 인덱스와 실제 카테고리 매핑
+
+
+# 반드시 존재해야 할 파일
+trained_model/ (학습 완료 후 자동 생성됨)
+faiss_index.bin와 faiss_mapping.json
+이 두 개는 build_faiss_index.py 실행으로 생성됨
+
+
+# 실행순서 (최초 1회)
+python init_train.py               # 최초 모델 학습
+python build_faiss_index.py        # 인덱스 구축
+python ui.py                       # UI 실행

@@ -1,0 +1,7 @@
+# requirements.txt
+sentence-transformers
+faiss-cpu
+numpy
+pandas
+scikit-learn
+tk
