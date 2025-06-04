@@ -12,4 +12,4 @@ venv/
 # System files
 .DS_Store
 
-models/trained_model/model.safetensors
+models/trained_model/
