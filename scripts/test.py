@@ -1,45 +1,55 @@
-import pandas as pd
-import numpy as np
-import faiss
-import json
-from sentence_transformers import SentenceTransformer
 
-# 경로 설정
-MODEL_PATH = "trained_model/"
-FAISS_INDEX_PATH = "faiss_index.bin"
-FAISS_MAPPING_PATH = "faiss_mapping.json"
+#
+# ## 모델확인
+#
+# from safetensors import safe_open
+# import torch
+#
+# # 모델 파일 경로
+# file_path = "models/trained_model/model.safetensors"
+#
+# # safetensors 열기
+# with safe_open(file_path, framework="pt", device="cpu") as f:
+#     # 모델 안에 저장된 모든 Tensor 키 (레이어 이름)
+#     keys = f.keys()
+#     print(f"모델에 저장된 텐서 수: {len(keys)}개")
+#     print("\n== 텐서 이름들 일부 출력 ==")
+#     for key in list(keys)[:10]:  # 앞에 10개만 보기
+#         print(f"  - {key}")
+#
+#     print("\n== 첫 번째 텐서 내용 ==")
+#     first_key = keys[0]
+#     tensor = f.get_tensor(first_key)
+#     print(f"텐서 이름: {first_key}")
+#     print(f"Shape: {tensor.shape}")
+#     print(f"데이터 일부:\n{tensor.flatten()[:10]}")
 
-# 모델 및 인덱스 로드
-model = SentenceTransformer(MODEL_PATH)
-index = faiss.read_index(FAISS_INDEX_PATH)
 
-with open(FAISS_MAPPING_PATH, 'r', encoding='utf-8') as f:
-    id_to_category = json.load(f)
 
-# 텍스트 클렌징
-def cleanse_text(text):
-    return ''.join([c for c in str(text) if c.isalnum() or c.isspace()]).lower().strip()
+## 업로드
 
-# 자재명 분류 함수
-def classify_material(material_name, language="ENG", top_n=5):
-    # 자재명 정제 및 임베딩
-    query = cleanse_text(material_name)
-    query_embedding = model.encode(query).astype('float32').reshape(1, -1)
+from huggingface_hub import HfApi
 
-    # FAISS 검색
-    distances, indices = index.search(query_embedding, top_n)
+api = HfApi()
 
-    # 결과 정리
-    results = []
-    for dist, idx in zip(distances[0], indices[0]):
-        if str(idx) in id_to_category:
-            category = id_to_category[str(idx)]
-            score = 1 / (1 + dist)  # 거리 → 유사도 변환
-            results.append({
-                "Level 1": category["Level 1"],
-                "Level 2": category["Level 2"],
-                "Level 3": category["Level 3"],
-                "Score": score
-            })
+api.upload_folder(
+    folder_path="models/trained_model",  # 폴더 전체
+    repo_id="jjinny/categoryMapping",
+    token="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",
+    repo_type="model",
+    path_in_repo="."  # 루트에 그대로 업로드
+)
 
-    return results
+
+
+# ## 다운로드
+# from huggingface_hub import hf_hub_download
+#
+# model_path = hf_hub_download(
+#     repo_id="jjinny/categoryMapping",
+#     filename="model.safetensors",
+#     token="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",   # Access Token
+#     cache_dir="./models/trained_model"
+# )
+#
+# print(f"모델 다운로드 완료: {model_path}")

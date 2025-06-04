@@ -13,6 +13,10 @@ GUI 기반의 자재 카테고리 분류
 5. 모델 재학습 트리거 (기존 학습 파이프라인 호출)
 
 """
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 import tkinter as tk
 from tkinter import ttk, messagebox

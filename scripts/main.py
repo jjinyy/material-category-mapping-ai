@@ -3,7 +3,7 @@ main.py
 -------
 
 학습된 문장 임베딩 모델과 구축된 FAISS 인덱스를 로드하여
-사용자로부터 입력받은 자재명을 기반으로 관련 카테고리를 분류
+사용자로부터 입력받은 자재명을 기반으로 관련 카테고리 분류
 
 1. 학습된 문장 임베딩 모델 로드 (models/trained_model)
 2. FAISS 인덱스 로드 (models/faiss_index.bin)
@@ -16,16 +16,26 @@ main.py
 import faiss
 import json
 from sentence_transformers import SentenceTransformer
+# from huggingface_hub import hf_hub_download
+# import os
 
 # 경로 설정
-MODEL_PATH = "models/trained_model"
+# 수정
+# token = os.getenv("HF_TOKEN")
+token = "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"
+
+# FAISS 인덱스 파일 경로
 FAISS_INDEX_PATH = "models/faiss_index.bin"
 FAISS_MAPPING_PATH = "models/faiss_mapping.json"
 
+# Hugging Face에서 바로 모델 로드
 # 1. 모델 및 인덱스 로드
 try:
-    model = SentenceTransformer(MODEL_PATH)
-    index = faiss.read_index(FAISS_INDEX_PATH)
+    model = SentenceTransformer(
+        "jjinny/categoryMapping",
+        use_auth_token=token
+    )
+    index = faiss.read_index("models/faiss_index.bin")
 except Exception as e:
     print(f"모델 또는 인덱스 로드 실패: {e}")
     exit(1)
@@ -37,7 +47,7 @@ with open(FAISS_MAPPING_PATH, 'r', encoding='utf-8') as f:
 # 3. 텍스트 클렌징
 def cleanse_text(text):
     """
-    입력된 텍스트를 소문자화 및 알파벳/숫자/공백 이외의 문자를 제거하여 클렌징합니다.
+    입력된 텍스트를 소문자화 및 알파벳/숫자/공백 이외의 문자를 제거하여 클렌징.
     """
     return ''.join([c for c in str(text) if c.isalnum() or c.isspace()]).lower().strip()
 

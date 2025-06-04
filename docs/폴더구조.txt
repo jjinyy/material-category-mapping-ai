@@ -41,13 +41,15 @@ cjCategoryMapping/
 │   ├── __init__.py               # 패키지 인식용
 │   ├── main.py                   # 메인 실행 파일 (UI 호출, 모델 로딩 등) / 모델 + 인덱스 로드 → 자재명 분류 기능
 │   ├── test.py                   # 테스트/디버깅용 스크립트
+│   ├── download_model.py         # hugging face에서 모델다운로드
+│   ├── upload_model.py           # hugging face에서 모델업로드
+│   ├── move_files.py             # 폴더 구조 변경 자동화 스크립트 (파일 이동용)
 │
 ├── docs/                         # 프로젝트 문서 폴더
 │   ├── 폴더구조.txt               # 폴더구조 설명 문서
 │
 ├── .gitattributes                 # Git 속성 설정 파일 (ex: LFS 설정)
 ├── .gitignore                     # Git 업로드 제외 파일 설정 (venv, __pycache__ 등)
-├── move_files.py                   # 폴더 구조 변경 자동화 스크립트 (파일 이동용)
 ├── requirements.txt               # 프로젝트 의존성 패키지 목록
 ├── venv/                           # Python 가상환경 폴더 (Git에 업로드 제외)
 └── __pycache__/                    # Python 캐시 파일 폴더 (Git에 업로드 제외)
