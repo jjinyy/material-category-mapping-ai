@@ -127,9 +127,9 @@ You can finetune this model on your own dataset.
 * Samples:
   | sentence_0                | sentence_1                | label          |
   |:--------------------------|:--------------------------|:---------------|
-  | <code>tomato sauce</code> | <code>banana puree</code> | <code>0</code> |
-  | <code>tomato sauce</code> | <code>pizza sauce</code>  | <code>1</code> |
   | <code>banana puree</code> | <code>fruit paste</code>  | <code>1</code> |
+  | <code>tomato sauce</code> | <code>pizza sauce</code>  | <code>1</code> |
+  | <code>tomato sauce</code> | <code>banana puree</code> | <code>0</code> |
 * Loss: [<code>CosineSimilarityLoss</code>](https://sbert.net/docs/package_reference/sentence_transformer/losses.html#cosinesimilarityloss) with these parameters:
   ```json
   {
