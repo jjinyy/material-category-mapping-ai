@@ -195,3 +195,4 @@ def run_ui(classify_callback):
 
 if __name__ == "__main__":
     run_ui(scripts.main.classify_material)
+# 안녕하세요 Test 입니다.
