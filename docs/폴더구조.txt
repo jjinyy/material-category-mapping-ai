@@ -4,42 +4,50 @@ faiss_index.bin와 faiss_mapping.json
 이 두 개는 build_faiss_index.py 실행으로 생성됨
 
 # 실행순서 (최초 1회)
-python init_train.py               # 최초 모델 학습
-python build_faiss_index.py        # 인덱스 구축
-python ui.py                       # UI 실행
-
+# 1. 모델 학습
+python -m train.init_train
+# 2. FAISS 인덱스 구축
+python -m train.build_faiss_index
+# 3. UI 실행 (Main Launcher)
+python -m scripts.main
 
 cjCategoryMapping/
 │
-├── train/                  # 학습 관련 코드
-│   ├── train_model.py
-│   ├── generate_training_data.py
-│   ├── init_train.py
+├── train/                   # 모델 학습 관련 코드
+│   ├── __init__.py           # 패키지 인식용 (비어있어도 반드시 필요)
+│   ├── build_faiss_index.py  # FAISS 인덱스 생성 스크립트 / 재학습 모델로 FAISS 인덱스 다시 구축
+│   ├── train_model.py        # 모델 학습 스크립트 / 피드백으로 모델 재학습 (fine-tuning)
+│   ├── generate_training_data.py  # 훈련 데이터 생성 스크립트 / 사용자 피드백 기반 학습 데이터 생성
+│   ├── init_train.py         # 학습 초기화 스크립트 (옵션 세팅 등) / 최초 Pretrained 모델로 기본 모델 저장
 │
-├── ui/                      # UI 관련 코드
-│   ├── ui.py
+├── ui/                       # 사용자 인터페이스(UI) 관련 코드
+│   ├── __init__.py            # 패키지 인식용
+│   ├── ui.py                  # 사용자 입력 및 결과 출력 인터페이스 / GUI 프로그램 — 사용자 입력 받고 결과 보여줌, 재학습까지 클릭으로 가능
 │
-├── data/                     # 데이터 파일
-│   ├── category.csv
-│   ├── training_data.csv
-│   ├── user_feedback.csv     # 사용자 피드백 데이터 (빈 CSV라도 존재해야 함)
+├── data/                      # 데이터 파일 저장 폴더
+│   ├── category.csv            # 분류 카테고리 데이터
+│   ├── training_data.csv       # 학습에 사용할 훈련 데이터
+│   ├── user_feedback.csv       # 사용자 피드백 수집 데이터 (초기엔 비어 있어도 파일 필요)
 │
-├── models/                   # 모델 파일, 체크포인트, 인덱스
-│   ├── trained_model/        # 학습된 모델 저장 폴더
-│   ├── checkpoints/          # 학습 중간 저장
-│   ├── faiss_index.bin       # 인덱싱된 벡터 파일 (없으면 에러, build로 생성 필요)
-│   ├── faiss_mapping.json    # 인덱스와 실제 카테고리 매핑
-│   ├── faiss_metadata.csv
+├── models/                     # 모델, 인덱스, 체크포인트 파일
+│   ├── __init__.py              # 패키지 인식용
+│   ├── trained_model/           # 최종 학습된 모델 저장 폴더 (config.json, pytorch_model.bin 등)
+│   ├── checkpoints/             # 학습 중간 체크포인트 저장 폴더
+│   ├── faiss_index.bin          # FAISS 인덱스 파일 (검색용 벡터 저장)
+│   ├── faiss_mapping.json       # 인덱스 ➔ 카테고리 매핑 JSON 파일
+│   ├── faiss_metadata.csv       # 인덱스 메타데이터 CSV (카테고리 정보 포함)
 │
-├── scripts/                   # 실행 스크립트
-│   ├── main.py
-│   ├── test.py
+├── scripts/                     # 프로젝트 실행/테스트 스크립트
+│   ├── __init__.py               # 패키지 인식용
+│   ├── main.py                   # 메인 실행 파일 (UI 호출, 모델 로딩 등) / 모델 + 인덱스 로드 → 자재명 분류 기능
+│   ├── test.py                   # 테스트/디버깅용 스크립트
 │
-├── docs/                      # 문서
-│   ├── 폴더구조.txt
+├── docs/                         # 프로젝트 문서 폴더
+│   ├── 폴더구조.txt               # 폴더구조 설명 문서
 │
-├── .gitignore
-├── requirements.txt
-├── README.md
-├── venv/                      # (git에 포함하지 않음)
-└── __pycache__/                # (git에 포함하지 않음)
+├── .gitattributes                 # Git 속성 설정 파일 (ex: LFS 설정)
+├── .gitignore                     # Git 업로드 제외 파일 설정 (venv, __pycache__ 등)
+├── move_files.py                   # 폴더 구조 변경 자동화 스크립트 (파일 이동용)
+├── requirements.txt               # 프로젝트 의존성 패키지 목록
+├── venv/                           # Python 가상환경 폴더 (Git에 업로드 제외)
+└── __pycache__/                    # Python 캐시 파일 폴더 (Git에 업로드 제외)
