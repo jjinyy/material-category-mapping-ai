@@ -34,7 +34,7 @@ api = HfApi()
 
 api.upload_folder(
     folder_path="models/trained_model",  # 폴더 전체
-    repo_id="jjinny/categoryMapping",
+    repo_id="kijinny/categoryMapping",
     token="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",
     repo_type="model",
     path_in_repo="."  # 루트에 그대로 업로드
@@ -46,7 +46,7 @@ api.upload_folder(
 # from huggingface_hub import hf_hub_download
 #
 # model_path = hf_hub_download(
-#     repo_id="jjinny/categoryMapping",
+#     repo_id="kijinny/categoryMapping",
 #     filename="model.safetensors",
 #     token="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",   # Access Token
 #     cache_dir="./models/trained_model"

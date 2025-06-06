@@ -8,7 +8,7 @@ from huggingface_hub import snapshot_download
 token="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"
 
 # Hugging Face 리포지토리
-repo_id = "jjinny/categoryMapping"
+repo_id = "kijinny/categoryMapping"
 
 # 다운로드
 snapshot_download(

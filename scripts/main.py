@@ -32,7 +32,7 @@ FAISS_MAPPING_PATH = "models/faiss_mapping.json"
 # 1. 모델 및 인덱스 로드
 try:
     model = SentenceTransformer(
-        "jjinny/categoryMapping",
+        "kijinny/categoryMapping",
         use_auth_token=token
     )
     index = faiss.read_index("models/faiss_index.bin")
