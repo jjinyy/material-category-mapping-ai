@@ -12,4 +12,14 @@ venv/
 # System files
 .DS_Store
 
+# Model files (too large for git)
 models/trained_model/
+models/*.bin
+models/*.json
+models/faiss_*
+
+# Generated data files
+data/triplet_training_data.csv
+
+# Checkpoints
+checkpoints/

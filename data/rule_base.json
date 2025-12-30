@@ -1,0 +1,4632 @@
+[
+  {
+    "keywords": ["sticker", "label", "스티커", "标签", "貼紙", "nhãn", "ラベル", "ステッカー"],
+    "regex": [".*sticker.*", ".*label.*"],
+    "code": "PLLB0030",
+    "type": "ROH2",
+    "priority": 1
+  },
+  {
+    "keywords": ["inmold", "in-mould", "in mold", "인몰드", "模内", "inmould", "inmold label", "nhãn in-mold", "インモールド"],
+    "regex": ["in.?mould", "in.?mold"],
+    "code": "PLLB0020",
+    "type": "ROH2",
+    "priority": 1
+  },
+  {
+    "keywords": ["pouch", "파우치", "袋", "小袋", "túi", "パウチ"],
+    "regex": [".*pouch.*"],
+    "code": "PLMF0040",
+    "type": "ROH2",
+    "priority": 1
+  },
+  {
+    "keywords": ["film", "필름", "薄膜", "膜", "màng", "フィルム"],
+    "regex": ["roll\\s*film", "lid\\s*film", ".*film.*"],
+    "code": "PLMF0030",
+    "type": "ROH2",
+    "priority": 1
+  },
+  {
+    "keywords": ["rsc", "박스", "箱", "紙箱", "carton", "case", "thùng", "ケース", "カートン"],
+    "regex": ["rsc", ".*carton.*", ".*case.*"],
+    "code": "PABX0010",
+    "type": "ROH2",
+    "priority": 1
+  },
+  {
+    "keywords": ["pad", "패드", "垫", "垫片", "miếng đệm", "パッド"],
+    "regex": ["pad"],
+    "code": "PAPP0030",
+    "type": "ROH2",
+    "priority": 1
+  },
+  {
+    "keywords": ["띠라벨", "帯ラベル", "帯标签", "nhãn vòng"],
+    "regex": [],
+    "code": "PLLB0010",
+    "type": "ROH2",
+    "priority": 1
+  },
+  {
+    "keywords": ["tray", "트레이", "托盘", "盘", "khay", "トレー"],
+    "regex": [],
+    "code": "PLBT0010",
+    "type": "ROH2",
+    "priority": 1
+  },
+  {
+    "keywords": ["opp tape", "tape", "테이프", "胶带", "opp胶带", "băng dính", "テープ"],
+    "regex": ["opp", ".*tape.*"],
+    "code": "OTOT0010",
+    "type": "ROH2",
+    "priority": 1
+  },
+
+  {
+    "keywords": ["soybean gmo", "gmo soybean", "대두 gmo", "转基因大豆", "大豆 gmo", "đậu tương gmo", "遺伝子組換え大豆"],
+    "regex": ["gmo.*soy", "gmo.*bean", "gmo.*대두"],
+    "code": "AABN0010",
+    "type": "ROH1",
+    "priority": 1
+  },
+
+  {
+    "keywords": ["soybean", "non-gmo soybean", "nongmo", "대두 nongmo", "非转基因大豆", "无gmo大豆", "đậu tương", "無調整大豆"],
+    "regex": ["non.?gmo.*soy", "non.?gmo.*bean"],
+    "code": "AABN0020",
+    "type": "ROH1",
+    "priority": 1
+  },
+
+  {
+    "keywords": ["sprout bean", "bean sprout seed", "콩나물콩", "芽豆", "豆芽用大豆", "hạt giá đỗ", "豆もやし用大豆"],
+    "regex": ["sprout.*bean"],
+    "code": "AABN0030",
+    "type": "ROH1",
+    "priority": 1
+  },
+
+  {
+    "keywords": ["lentil", "렌틸콩", "렌틸", "小扁豆", "扁豆", "đậu lăng", "レンズ豆"],
+    "regex": ["lentil"],
+    "code": "AABN0040",
+    "type": "ROH1",
+    "priority": 1
+  },
+
+  {
+    "keywords": ["kidney bean", "red kidney", "강낭콩", "红芸豆", "赤芸豆", "đậu thận đỏ", "レッドキドニー"],
+    "regex": ["kidney.*bean"],
+    "code": "AABN0050",
+    "type": "ROH1",
+    "priority": 1
+  },
+
+  {
+    "keywords": ["green bean", "string bean", "줄기콩", "青刀豆", "四季豆", "đậu que", "いんげん豆"],
+    "regex": ["green.*bean", "string.*bean"],
+    "code": "AABN0060",
+    "type": "ROH1",
+    "priority": 1
+  },
+
+  {
+    "keywords": ["mung bean", "mung", "녹두", "绿豆", "đậu xanh", "緑豆"],
+    "regex": ["mung.*bean"],
+    "code": "AABN0070",
+    "type": "ROH1",
+    "priority": 1
+  },
+
+  {
+    "keywords": ["chickpea", "garbanzo", "병아리콩", "鹰嘴豆", "đậu gà", "ひよこ豆"],
+    "regex": ["chick.?pea", "garbanzo"],
+    "code": "AABN0080",
+    "type": "ROH1",
+    "priority": 1
+  },
+
+  {
+    "keywords": ["pea whole", "pea split", "green pea", "완두콩", "青豌豆", "豌豆", "đậu hà lan", "グリーンピース"],
+    "regex": ["\\bpea\\b", "green.*pea"],
+    "code": "AABN0090",
+    "type": "ROH1",
+    "priority": 1
+  },
+
+  {
+    "keywords": ["edamame", "soybean green", "풋콩", "毛豆", "đậu edamame", "枝豆"],
+    "regex": ["edamame"],
+    "code": "AABN0100",
+    "type": "ROH1",
+    "priority": 1
+  },
+
+  {
+    "keywords": ["adzuki", "red bean", "팥", "적두", "红豆", "赤小豆", "đậu đỏ", "小豆"],
+    "regex": ["adzuki", "red.*bean"],
+    "code": "AABN0110",
+    "type": "ROH1",
+    "priority": 1
+  },
+
+  {
+    "code": "AACV0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "냉고추", "frozen chili",
+      "冷冻辣椒",
+      "ớt đông lạnh",
+      "冷凍唐辛子"
+    ],
+    "regex": ["frozen.*chili", "냉.*고추"]
+  },
+  {
+    "code": "AACV0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "건고추", "dried chili",
+      "干辣椒",
+      "ớt khô",
+      "乾燥唐辛子"
+    ],
+    "regex": ["dried.*chili", "건.*고추"]
+  },
+  {
+    "code": "AACV0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "청양고추", "cheongyang chili",
+      "青阳辣椒",
+      "ớt cheongyang",
+      "清陽唐辛子"
+    ],
+    "regex": ["cheong.?yang"]
+  },
+  {
+    "code": "AACV0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "풋고추", "green chili pepper",
+      "青辣椒",
+      "ớt xanh",
+      "青唐辛子"
+    ],
+    "regex": ["green.*chili"]
+  },
+  {
+    "code": "AACV0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "홍고추", "red chili pepper",
+      "红辣椒",
+      "ớt đỏ",
+      "赤唐辛子"
+    ],
+    "regex": ["red.*chili"]
+  },
+  {
+    "code": "AACV0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "꽈리고추", "shishito pepper",
+      "狮子椒",
+      "ớt shishito",
+      "ししとう"
+    ],
+    "regex": ["shishito"]
+  },
+  {
+    "code": "AACV0090",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "할라피뇨", "jalapeno",
+      "墨西哥辣椒",
+      "ớt jalapeno",
+      "ハラペーニョ"
+    ],
+    "regex": ["jalap"]
+  },
+
+  {
+    "code": "AAFR0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["사과","apple","苹果","táo","りんご"],
+    "regex": ["apple"]
+  },
+  {
+    "code": "AAFR0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["배","pear","梨","lê","洋梨"],
+    "regex": ["pear"]
+  },
+  {
+    "code": "AAFR0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["감귤","tangerine","橘子","quýt","みかん"],
+    "regex": ["tangerine"]
+  },
+  {
+    "code": "AAFR0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["딸기","strawberry","草莓","dâu tây","いちご"],
+    "regex": ["strawberry"]
+  },
+  {
+    "code": "AAFR0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["금귤","kumquat","金桔","quất vàng","金柑"],
+    "regex": ["kumquat"]
+  },
+  {
+    "code": "AAFR0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["단감","sweet persimmon","甜柿","hồng ngọt","甘柿"],
+    "regex": ["persimmon"]
+  },
+  {
+    "code": "AAFR0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["홍시","hongsi","熟柿","hồng chín","熟柿"],
+    "regex": ["hongsi"]
+  },
+  {
+    "code": "AAFR0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["대봉시","daebongsi","大柿","hồng daebong","大柿"],
+    "regex": ["daebong"]
+  },
+  {
+    "code": "AAFR0090",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["매실","japanese plum","梅子","mận nhật","梅"],
+    "regex": ["japanese.*plum"]
+  },
+  {
+    "code": "AAFR0100",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["메론","melon","哈密瓜","dưa lưới","メロン"],
+    "regex": ["melon"]
+  },
+  {
+    "code": "AAFR0110",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["모과","quince","木瓜","mộc qua","マルメロ"],
+    "regex": ["quince"]
+  },
+  {
+    "code": "AAFR0120",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["복분자","bokbunja","覆盆子","phúc bồn tử","覆盆子"],
+    "regex": ["bokbun"]
+  },
+  {
+    "code": "AAFR0130",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["블루베리","blueberry","蓝莓","việt quất","ブルーベリー"],
+    "regex": ["blueberry"]
+  },
+  {
+    "code": "AAFR0140",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["수박","watermelon","西瓜","dưa hấu","スイカ"],
+    "regex": ["watermelon"]
+  },
+  {
+    "code": "AAFR0150",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["키위","참다래","kiwi","奇异果","kiwi","キウイ"],
+    "regex": ["kiwi"]
+  },
+  {
+    "code": "AAFR0160",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["참외","oriental melon","甜瓜","dưa leo ngọt","マクワウリ"],
+    "regex": ["oriental.*melon"]
+  },
+  {
+    "code": "AAFR0170",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["천혜향","cheonhyehyang","橙香","cam thiên hương","天惠香"],
+    "regex": ["cheonhye"]
+  },
+  {
+    "code": "AAFR0180",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["한라봉","hallabong","不知火","cam hallabong","デコポン"],
+    "regex": ["halla"]
+  },
+  {
+    "code": "AAFR0190",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["포도","grape","葡萄","nho","ぶどう"],
+    "regex": ["grape"]
+  },
+  {
+    "code": "AAFR0200",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["자두","plum","李子","mận","プラム"],
+    "regex": ["plum"]
+  },
+  {
+    "code": "AAFR0210",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["복숭아","peach","桃子","đào","桃"],
+    "regex": ["peach"]
+  },
+  {
+    "code": "AAFR0220",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["리치","lychee","荔枝","vải","ライチ"],
+    "regex": ["lychee"]
+  },
+  {
+    "code": "AAFR0230",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["체리","cherry","樱桃","anh đào","さくらんぼ"],
+    "regex": ["cherry"]
+  },
+  {
+    "code": "AAFR0240",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["레몬","lemon","柠檬","chanh","レモン"],
+    "regex": ["lemon"]
+  },
+  {
+    "code": "AAFR0250",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["망고","mango","芒果","xoài","マンゴー"],
+    "regex": ["mango"]
+  },
+  {
+    "code": "AAFR0260",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["바나나","banana","香蕉","chuối","バナナ"],
+    "regex": ["banana"]
+  },
+  {
+    "code": "AAFR0270",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["석류","pomegranate","石榴","lựu","ザクロ"],
+    "regex": ["pomegranate"]
+  },
+  {
+    "code": "AAFR0280",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["오렌지","orange","橙子","cam","オレンジ"],
+    "regex": ["orange"]
+  },
+  {
+    "code": "AAFR0290",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["자몽","grapefruit","西柚","bưởi chùm","グレープフルーツ"],
+    "regex": ["grapefruit"]
+  },
+  {
+    "code": "AAFR0300",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["파인애플","pineapple","菠萝","dứa","パイナップル"],
+    "regex": ["pineapple"]
+  },
+  {
+    "code": "AAFR0310",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["살구","apricot","杏子","mơ","アプリコット"],
+    "regex": ["apricot"]
+  },
+  {
+    "code": "AAFR0320",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["대추","jujube","红枣","táo đỏ","ナツメ"],
+    "regex": ["jujube"]
+  },
+  {
+    "code": "AAFR0330",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["올리브","olive","橄榄","ô liu","オリーブ"],
+    "regex": ["olive"]
+  },
+  {
+    "code": "AAFR0350",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["코코넛","coconut","椰子","dừa","ココナッツ"],
+    "regex": ["coconut"]
+  },
+  {
+    "code": "AAFV0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["토마토","tomato","番茄","cà chua","トマト"],
+    "regex": ["tomato"]
+  },
+  {
+    "code": "AAFV0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["오이","cucumber","黄瓜","dưa leo","きゅうり"],
+    "regex": ["cucumber"]
+  },
+  {
+    "code": "AAFV0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["호박","pumpkin","南瓜","bí đỏ","かぼちゃ"],
+    "regex": ["pumpkin"]
+  },
+  {
+    "code": "AAFV0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["가지","eggplant","茄子","cà tím","なす"],
+    "regex": ["eggplant"]
+  },
+  {
+    "code": "AAHB0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["파슬리","parsley","欧芹","rau mùi tây","パセリ"],
+    "regex": ["parsley"]
+  },
+  {
+    "code": "AAHB0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["바질","basil","罗勒","húng quế","バジル"],
+    "regex": ["basil"]
+  },
+  {
+    "code": "AAHB0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["스테비아","stevia","甜菊","cỏ ngọt","ステビア"],
+    "regex": ["stevia"]
+  },
+  {
+    "code": "AAHB0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["오레가노","oregano","牛至","lá oregano","オレガノ"],
+    "regex": ["oregano"]
+  },
+  {
+    "code": "AAHB0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["아니스","anise","茴香","hồi hương","アニス"],
+    "regex": ["anise"]
+  },
+    {
+    "code": "AAGR0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["원맥","밀","wheat","小麦","lúa mì","小麦(こむぎ)"],
+    "regex": ["wheat"]
+  },
+  {
+    "code": "AAGR0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["옥수수","corn","玉米","ngô","コーン"],
+    "regex": ["corn"]
+  },
+   {
+    "code": "AAMG0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["귀리","oats","燕麦","yến mạch","オーツ"],
+    "regex": ["oat"]
+  },
+  {
+    "code": "AAMG0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["기장","millet","稷子","kê vàng","キビ"],
+    "regex": ["millet"]
+  },
+  {
+    "code": "AAMG0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["메밀","buckwheat","荞麦","kiều mạch","そば"],
+    "regex": ["buckwheat"]
+  },
+  {
+    "code": "AAMG0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["참깨","sesame","芝麻","mè","ゴマ"],
+    "regex": ["sesame"]
+  },
+  {
+    "code": "AAMG0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["들깨","perilla seeds","苏子","hạt tía tô","エゴマ"],
+    "regex": ["perilla"]
+  },
+  {
+    "code": "AAMG0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["보리","barley","大麦","lúa mạch","大麦"],
+    "regex": ["barley"]
+  },
+  {
+    "code": "AAMG0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["수수","sorghum","高粱","cao lương","ソルガム"],
+    "regex": ["sorghum"]
+  },
+  {
+    "code": "AAMG0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["율무","job's tears","薏苡仁","ý dĩ","ハトムギ"],
+    "regex": ["job.?s.*tears"]
+  },
+  {
+    "code": "AAMG0090",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["차조","foxtail millet","黍子","kê đuôi cáo","アワ"],
+    "regex": ["foxtail"]
+  },
+  {
+    "code": "AAMG0100",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["치아시드","chia seeds","奇亚籽","hạt chia","チアシード"],
+    "regex": ["chia"]
+  },
+  {
+    "code": "AAMG0110",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["퀴노아","quinoa","藜麦","diêm mạch","キヌア"],
+    "regex": ["quinoa"]
+  },
+  {
+    "code": "AAMG0120",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["파로","farro","二粒小麦","farro","ファッロ"],
+    "regex": ["farro"]
+  },
+  {
+    "code": "AAMG0130",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["혼합곡","mixed grains","混合穀物","ngũ cốc hỗn hợp","雑穀ミックス"],
+    "regex": ["mixed.*grain"]
+  },
+    {
+    "code": "AALV0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["갓", "garland chrysanthemum", "春菊", "rau cải cúc", "春菊(しゅんぎく)"],
+    "regex": ["chrysanthemum"]
+  },
+  {
+    "code": "AALV0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["고수", "cilantro", "香菜", "ngò rí", "シラントロ"],
+    "regex": ["cilantro", "coriander"]
+  },
+  {
+    "code": "AALV0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["근대", "swiss chard", "瑞士甜菜", "cải cầu vồng", "スイスチャード"],
+    "regex": ["chard"]
+  },
+  {
+    "code": "AALV0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["깻잎", "perilla leaves", "苏叶", "lá tía tô", "えごまの葉"],
+    "regex": ["perilla"]
+  },
+  {
+    "code": "AALV0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["냉이", "shepherd's purse", "荠菜", "cải tần ô", "ナズナ"],
+    "regex": ["shepherd"]
+  },
+  {
+    "code": "AALV0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["로메인", "romaine", "长叶莴苣", "xà lách romaine", "ロメイン"],
+    "regex": ["romaine"]
+  },
+  {
+    "code": "AALV0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["루꼴라", "arugula", "芝麻菜", "rau arugula", "ルッコラ"],
+    "regex": ["arugula"]
+  },
+  {
+    "code": "AALV0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["부추", "chives", "韭菜", "hẹ", "ニラ"],
+    "regex": ["chive"]
+  },
+  {
+    "code": "AALV0090",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["브로콜리", "broccoli", "西兰花", "bông cải xanh", "ブロッコリー"],
+    "regex": ["broccoli"]
+  },
+  {
+    "code": "AALV0100",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["셀러리", "celery", "芹菜", "cần tây", "セロリ"],
+    "regex": ["celery"]
+  },
+  {
+    "code": "AALV0110",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["시금치", "spinach", "菠菜", "rau bina", "ホウレンソウ"],
+    "regex": ["spinach"]
+  },
+  {
+    "code": "AALV0120",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["시래기", "dried radish greens", "萝卜缨干", "cải củ phơi khô", "干し菜"],
+    "regex": ["dried.*radish"]
+  },
+  {
+    "code": "AALV0130",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["양배추", "cabbage", "卷心菜", "bắp cải", "キャベツ"],
+    "regex": ["cabbage"]
+  },
+  {
+    "code": "AALV0140",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["양상추", "iceberg lettuce", "生菜", "xà lách iceberg", "アイスバーグレタス"],
+    "regex": ["iceberg"]
+  },
+  {
+    "code": "AALV0150",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["적양배추", "red cabbage", "紫甘蓝", "bắp cải đỏ", "紫キャベツ"],
+    "regex": ["red.*cabbage"]
+  },
+  {
+    "code": "AALV0160",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["청경채", "bok choy", "上海青", "cải thìa", "チンゲンサイ"],
+    "regex": ["bok.?choy"]
+  },
+  {
+    "code": "AALV0170",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["상추", "lettuce", "生菜", "rau diếp", "レタス"],
+    "regex": ["lettuce"]
+  },
+  {
+    "code": "AALV0190",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["겨자채소", "mustard greens", "芥菜", "cải mù tạt", "からし菜"],
+    "regex": ["mustard.*green"]
+  },
+  {
+    "code": "AALV0200",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["케일", "kale", "羽衣甘蓝", "cải xoăn", "ケール"],
+    "regex": ["kale"]
+  },
+  {
+    "code": "AALV0210",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["죽순", "bamboo shoots", "竹笋", "măng tre", "タケノコ"],
+    "regex": ["bamboo.*shoot"]
+  },
+   {
+    "code": "AARV0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["감자", "potato", "马铃薯", "khoai tây", "ポテト"],
+    "regex": ["potato"]
+  },
+  {
+    "code": "AARV0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["얌빈", "yam bean", "沙葛", "củ đậu", "ヤムビーン"],
+    "regex": ["yam.?bean"]
+  },
+  {
+    "code": "AARV0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["고구마", "sweet potato", "红薯", "khoai lang", "サツマイモ"],
+    "regex": ["sweet.?potato"]
+  },
+  {
+    "code": "AARV0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["당근", "carrot", "胡萝卜", "cà rốt", "ニンジン"],
+    "regex": ["carrot"]
+  },
+  {
+    "code": "AARV0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["연근", "lotus root", "莲藕", "ngó sen", "レンコン"],
+    "regex": ["lotus.?root"]
+  },
+  {
+    "code": "AARV0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["우엉", "burdock", "牛蒡", "ngưu bàng", "ゴボウ"],
+    "regex": ["burdock"]
+  },
+  {
+    "code": "AARV0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["토란", "taro", "芋头", "khoai môn", "タロイモ"],
+    "regex": ["taro"]
+  },
+  {
+    "code": "AARV0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["물밤", "water chestnut", "荸荠", "củ năng", "クワイ"],
+    "regex": ["water.?chestnut"]
+  },
+  {
+    "code": "AARV0090",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["서양고추냉이", "horseradish", "山葵根", "cải ngựa", "ホースラディッシュ"],
+    "regex": ["horseradish"]
+  },
+  {
+    "code": "AARV0100",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["더덕", "deodeok", "沙参", "sâm đất", "ドドク"],
+    "regex": ["deodeok"]
+  },
+  {
+    "code": "AARV0110",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["도라지", "bellflower root", "桔梗根", "rễ hoa chuông", "キキョウ"],
+    "regex": ["bellflower"]
+  },
+  {
+    "code": "AARV0120",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["인삼", "ginseng", "人参", "nhân sâm", "高麗人参"],
+    "regex": ["ginseng"]
+  },
+  {
+    "code": "AARI0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["적미", "red rice", "红米", "gạo đỏ", "赤米"],
+    "regex": ["red.?rice"]
+  },
+  {
+    "code": "AARI0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["백미", "white rice", "白米", "gạo trắng", "白米(はくまい)"],
+    "regex": ["white.?rice"]
+  },
+  {
+    "code": "AARI0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["조곡", "unhulled rice", "稻谷", "thóc", "もみ米"],
+    "regex": ["unhulled.?rice"]
+  },
+  {
+    "code": "AARI0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["찰현미", "glutinous brown rice", "糯糙米", "gạo lứt nếp", "もち玄米"],
+    "regex": ["glutinous.?brown.?rice"]
+  },
+  {
+    "code": "AARI0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["찹쌀", "glutinous rice", "糯米", "gạo nếp", "もち米"],
+    "regex": ["glutinous.?rice"]
+  },
+  {
+    "code": "AARI0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["현미", "brown rice", "糙米", "gạo lứt", "玄米"],
+    "regex": ["brown.?rice"]
+  },
+  {
+    "code": "AARI0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["흑미", "black rice", "黒米", "gạo đen", "黒米(こくまい)"],
+    "regex": ["black.?rice"]
+  },
+  {
+    "code": "AARI0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["야생쌀", "wild rice", "野米", "gạo hoang", "ワイルドライス"],
+    "regex": ["wild.?rice"]
+  },
+{
+    "code": "AARC0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["무", "radish", "大根", "củ cải", "大根(だいこん)"],
+    "regex": ["\\bradish\\b"]
+  },
+  {
+    "code": "AARC0011",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["조선무", "korean radish", "韓国大根", "củ cải Hàn Quốc", "韓国大根"],
+    "regex": ["korean.?radish"]
+  },
+  {
+    "code": "AARC0012",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["왜무", "japanese radish", "日本大根", "củ cải Nhật", "日本大根"],
+    "regex": ["japanese.?radish"]
+  },
+  {
+    "code": "AARC0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["배추", "chinese cabbage", "白菜", "bắp cải Trung Quốc", "白菜(はくさい)"],
+    "regex": ["chinese.?cabbage"]
+  },
+  {
+    "code": "AARC0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["절임배추", "salted chinese cabbage", "腌白菜", "dưa cải muối", "白菜漬け"],
+    "regex": ["salted.?chinese.?cabbage"]
+  },
+  {
+    "code": "AARC0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["열무", "young radish", "若大根", "củ cải non", "若大根"],
+    "regex": ["young.?radish"]
+  },
+  {
+    "code": "AARC0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["알타리", "ponytail radish", "ミニ大根", "củ cải nhỏ", "ミニ大根"],
+    "regex": ["ponytail.?radish"]
+  },
+  {
+    "code": "AARC0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["얼갈이", "winter cabbage", "冬白菜", "bắp cải mùa đông", "冬白菜"],
+    "regex": ["winter.?cabbage"]
+  },
+  {
+    "code": "AASV0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["대파", "leek", "長ねぎ", "大葱", "tỏi tây"],
+    "regex": ["\\bleek\\b"]
+  },
+  {
+    "code": "AASV0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["파", "green onion", "spring onion", "ねぎ", "青葱", "hành lá"],
+    "regex": ["green.?onion", "spring.?onion"]
+  },
+  {
+    "code": "AASV0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["마늘", "garlic", "にんにく", "大蒜", "tỏi"],
+    "regex": ["\\bgarlic\\b"]
+  },
+  {
+    "code": "AASV0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["생강", "ginger", "しょうが", "生姜", "gừng"],
+    "regex": ["\\bginger\\b"]
+  },
+  {
+    "code": "AASV0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["양파", "onion", "玉ねぎ", "洋葱", "hành tây"],
+    "regex": ["\\bonion\\b"]
+  },
+  {
+    "code": "AASV0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["쪽파", "scallion", "ねぎ(細)", "小葱", "hành hoa"],
+    "regex": ["scallion"]
+  },
+  {
+    "code": "AASV0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["파프리카", "paprika", "パプリカ", "甜椒", "ớt chuông"],
+    "regex": ["paprika"]
+  },
+  {
+    "code": "AASV0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["피망", "bell pepper", "ピーマン", "甜椒(青)", "ớt ngọt"],
+    "regex": ["bell.?pepper"]
+  },
+  {
+    "code": "AAOT0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["나물", "나물류", "고사리", "취나물", "도라지", "시래기", "곤드레", "산나물", "namul", "野菜和え", "拌菜", "rau trộn"],
+    "regex": ["namul"]
+  },
+  {
+    "code": "AAOT0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["약용식물", "medicinal plant", "薬用植物", "药用植物", "cây thuốc"],
+    "regex": ["medicinal.*plant"]
+  },
+  {
+    "code": "AAOT0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["밀키트 농산", "meal kit agri", "ミールキット野菜", "套餐蔬菜", "rau meal kit"],
+    "regex": ["meal.?kit"]
+  },
+  {
+    "code": "APBN0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["TVP", "CSP", "ISP", "대두단백", "텍스쳐드소이", "大豆蛋白", "組織化大豆", "đậu nành protein"],
+    "regex": ["tvp", "csp", "isp", "textured.?soy"]
+  },
+  {
+    "code": "APBN0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["탈지대두", "defatted soybean", "脱脂大豆", "脱脂豆", "脱脂大豆粉", "đậu nành tách béo"],
+    "regex": ["defatted.?soy"]
+  },
+  {
+    "code": "APBN0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["두류분말", "콩가루", "soybean powder", "大豆粉末", "豆粉", "bột đậu nành"],
+    "regex": ["soy.?powder", "soybean.?powder"]
+  },
+  {
+    "code": "APBN0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["두부", "tofu", "豆腐", "とうふ", "đậu phụ"],
+    "regex": ["tofu"]
+  },
+  {
+    "code": "APBN0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["대두박", "soybean meal", "豆粕", "대두박", "khô đậu nành"],
+    "regex": ["soybean.?meal"]
+  },
+  {
+    "code": "APCP0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["고추양념", "chili seasoning", "辣椒调味", "唐辛子シーズニング", "gia vị ớt"],
+    "regex": ["chili.?season"]
+  },
+  {
+    "code": "APCP0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["고추엑기스", "chili extract", "辣椒エキス", "辣椒提取物", "chiết xuất ớt"],
+    "regex": ["chili.?extract"]
+  },
+  {
+    "code": "APCP0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["고추페이스트", "고추페이스트", "chili paste", "辣椒ペースト", "tương ớt"],
+    "regex": ["chili.?paste"]
+  },
+  {
+    "code": "APCP0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["절인 할라피뇨", "pickled jalapeno", "腌墨西哥辣椒", "ハラペーニョ酢漬け", "jalapeno muối"],
+    "regex": ["pickled.?jalap"]
+  },
+   {
+    "code": "APFI0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["버섯엑기스", "mushroom extract", "きのこエキス", "蘑菇提取物", "chiết xuất nấm"],
+    "regex": ["mushroom.?extract"]
+  },
+  {
+    "code": "APFI0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["버섯분말", "mushroom powder", "きのこ粉", "蘑菇粉", "bột nấm"],
+    "regex": ["mushroom.?powder"]
+  },
+  {
+    "code": "APFI0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["약용식물추출물", "medicinal plant extract", "薬用植物抽出物", "药用植物提取物", "chiết xuất dược liệu"],
+    "regex": ["medicinal.?plant.?extract"]
+  },
+  {
+    "code": "APFR0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["과실농축액", "fruit concentrate", "果汁濃縮", "水果浓缩液", "nước cô đặc trái cây"],
+    "regex": ["fruit.?concentrate"]
+  },
+  {
+    "code": "APFR0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "과일퓨레", "퓨레", "fruit puree",
+      "단호박퓨레", "pumpkin puree",
+      "바나나퓨레", "banana puree",
+      "배퓨레", "pear puree",
+      "사과퓨레", "apple puree",
+      "파인애플퓨레", "pineapple puree",
+      "키위퓨레", "kiwi puree",
+      "果泥", "ピューレ", "purê trái cây"
+    ],
+    "regex": ["puree", "퓨레"]
+  },
+  {
+    "code": "APFR0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["카카오", "cacao", "可可", "カカオ", "ca cao"],
+    "regex": ["cacao", "\\bcocoa\\b"]
+  },
+  {
+    "code": "APGR0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["곤약쌀", "konjac rice", "蒟蒻米", "しらたき米", "gạo konjac"],
+    "regex": ["konjac.?rice"]
+  },
+  {
+    "code": "APGR0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["떡", "밥", "rice cake", "餅", "bánh gạo"],
+    "regex": ["rice.?cake"]
+  },
+  {
+    "code": "APGR0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["곡류후레이크", "grain flakes", "雑穀フレーク", "谷物片", "ngũ cốc dạng flakes"],
+    "regex": ["grain.?flakes"]
+  },
+  {
+    "code": "APGR0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["건식곡물믹스", "dry grain mix", "穀物ミックス", "谷物混合", "mix ngũ cốc khô"],
+    "regex": ["grain.?mix"]
+  },
+  {
+    "code": "APGR0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["라이스페이퍼", "rice paper", "ライスペーパー", "米纸", "bánh tráng"],
+    "regex": ["rice.?paper"]
+  },
+  {
+    "code": "APGR0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["밀가루", "wheat flour", "小麦粉", "面粉", "bột mì"],
+    "regex": ["wheat.?flour"]
+  },
+  {
+    "code": "APGR0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["귀리섬유질", "oat fiber", "オートファイバー", "燕麦纤维", "xơ yến mạch"],
+    "regex": ["oat.?fiber"]
+  },
+  {
+    "code": "APGR0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["귀리가루", "oat flour", "オート粉", "燕麦粉", "bột yến mạch"],
+    "regex": ["oat.?flour"]
+  },
+  {
+    "code": "APGR0090",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["메밀가루", "buckwheat flour", "そば粉", "荞麦粉", "bột kiều mạch"],
+    "regex": ["buckwheat.?flour"]
+  },
+  {
+    "code": "APGR0100",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["보리가루", "barley flour", "大麦粉", "麦粉", "bột lúa mạch"],
+    "regex": ["barley.?flour"]
+  },
+  {
+    "code": "APGR0110",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["쌀가루", "rice flour", "米粉", "米粉", "bột gạo"],
+    "regex": ["rice.?flour"]
+  },
+  {
+    "code": "APGR0120",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["옥수수 가공", "processed corn", "加工玉米", "とうもろこし加工", "ngô đã xử lý"],
+    "regex": ["processed.?corn"]
+  },
+  {
+    "code": "APGR0130",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["찹쌀가루", "glutinous rice flour", "もち米粉", "糯米粉", "bột nếp"],
+    "regex": ["glutinous.?rice.?flour"]
+  },
+  {
+    "code": "APGR0140",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["현미가루", "brown rice flour", "玄米粉", "糙米粉", "bột gạo lứt"],
+    "regex": ["brown.?rice.?flour"]
+  },
+  {
+    "code": "APGR0150",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["혼합분말", "mixed powder", "ミックス粉", "混合粉", "bột hỗn hợp"],
+    "regex": ["mixed.?powder"]
+  },
+  {
+    "code": "APGR0160",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["흑미분말", "black rice powder", "黒米粉", "黑米粉", "bột gạo đen"],
+    "regex": ["black.?rice.?powder"]
+  },
+  {
+    "code": "APGR0170",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["참깨분", "sesame powder", "ごま粉", "芝麻粉", "bột mè"],
+    "regex": ["sesame.?powder"]
+  },
+  {
+    "code": "APGR0180",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["빵가루", "bread crumbs", "パン粉", "面包糠", "bột chiên xù"],
+    "regex": ["bread.?crumb"]
+  },
+  {
+    "code": "APGR0190",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["들깨분", "perilla powder", "えごま粉", "苏子粉", "bột tía tô"],
+    "regex": ["perilla.?powder"]
+  },
+  {
+    "code": "APNU0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["견과류분말", "nut powder", "坚果粉", "ナッツパウダー", "bột hạt"],
+    "regex": ["nut.?powder"]
+  },
+  {
+    "code": "APOT0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["야채블럭", "vegetable block", "蔬菜块", "野菜ブロック", "khối rau"],
+    "regex": ["vegetable.?block"]
+  },
+  {
+    "code": "APOT0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["야채육수", "야채농축액", "vegetable broth", "vegetable concentrate", "蔬菜高汤", "蔬菜浓缩液", "野菜だし", "野菜濃縮", "nước dùng rau"],
+    "regex": ["vegetable.?broth", "vegetable.?concentrate"]
+  },
+  {
+    "code": "APSG0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["원당", "raw sugar", "原糖", "粗糖", "thô đường"],
+    "regex": ["raw.?sugar"]
+  },
+  {
+    "code": "APSG0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["유기농설탕", "organic sugar", "有机糖", "オーガニックシュガー", "đường hữu cơ"],
+    "regex": ["organic.?sugar"]
+  },
+  {
+    "code": "APSG0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["자일로스", "xylose", "木糖", "キシロース", "xylose"],
+    "regex": ["xylose"]
+  },
+  {
+    "code": "APSG0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["말티톨", "maltitol", "麦芽糖醇", "マルチトール", "maltitol"],
+    "regex": ["maltitol"]
+  },
+  {
+    "code": "APSG0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["이소말토", "isomalt", "异麦芽酮糖醇", "イソマルト", "isomalt"],
+    "regex": ["isomalt"]
+  },
+  {
+    "code": "APSG0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["에리스리톨", "erythritol", "赤藻糖醇", "エリスリトール", "erythritol"],
+    "regex": ["erythritol"]
+  },
+  {
+    "code": "APSG0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["솔비톨", "sorbitol", "山梨糖醇", "ソルビトール", "sorbitol"],
+    "regex": ["sorbitol"]
+  },
+  {
+    "code": "APSG0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["함수포도당", "hydrated glucose", "含水葡萄糖", "含水グルコース", "glucose ngậm nước"],
+    "regex": ["hydrated.?glucose"]
+  },
+  {
+    "code": "APSG0090",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["말토덱스트린", "maltodextrin", "麦芽糊精", "マルトデキストリン", "maltodextrin"],
+    "regex": ["maltodextrin"]
+  },
+  {
+    "code": "APSG0100",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["덱스트린", "dextrin", "糊精", "デキストリン", "dextrin"],
+    "regex": ["dextrin"]
+  },
+  {
+    "code": "APSG0120",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["이성화당", "isomerized sugar", "异构糖", "転化糖", "đường isomer"],
+    "regex": ["isomer"]
+  },
+  {
+    "code": "APSG0180",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["슈크로스", "sucrose", "蔗糖", "スクロース", "sucrose"],
+    "regex": ["sucrose"]
+  },
+  {
+    "code": "APSG0190",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["글루코스", "glucose", "葡萄糖", "グルコース", "glucose"],
+    "regex": ["glucose"]
+  },
+  {
+    "code": "APSG0210",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["포도당", "dextrose", "葡萄糖", "デキストロース", "dextrose"],
+    "regex": ["dextrose"]
+  },
+  {
+    "code": "APSG0220",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["과당", "fructose", "果糖", "フルクトース", "fructose"],
+    "regex": ["fructose"]
+  },
+  {
+    "code": "APSG0240",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["백설탕", "white sugar", "白砂糖", "上白糖", "đường trắng"],
+    "regex": ["white.?sugar"]
+  },
+  {
+    "code": "APSG0250",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["고과당 옥수수시럽", "hfcs", "high fructose corn syrup", "高果糖玉米糖浆", "異性化糖シロップ", "siro ngô HFCS"],
+    "regex": ["hfcs", "high.?fructose.?corn.?syrup"]
+  },
+  {
+    "code": "APSG0260",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["액상당", "raw syrup", "液状糖", "液糖", "đường lỏng"],
+    "regex": ["raw.?syrup", "liquid.?sugar"]
+  },
+  {
+    "code": "APST0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["전분", "starch", "淀粉", "でん粉", "tinh bột"],
+    "regex": ["\\bstarch\\b"]
+  },
+  {
+    "code": "APST0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["전분믹스", "starch mix", "混合澱粉", "スターチミックス", "hỗn hợp tinh bột"],
+    "regex": ["starch.?mix"]
+  },
+  {
+    "code": "APST0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["소맥전분", "wheat starch", "小麦澱粉", "小麦でん粉", "tinh bột lúa mì"],
+    "regex": ["wheat.?starch"]
+  },
+  {
+    "code": "APST0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["타피오카변성전분", "modified tapioca starch", "变性木薯淀粉", "加工タピオカ澱粉", "tapioca tinh bột biến tính"],
+    "regex": ["modified.?tapioca.?starch"]
+  },
+  {
+    "code": "APST0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["옥수수전분가루", "corn starch powder", "玉米淀粉粉末", "コーンスターチパウダー", "bột tinh bột ngô"],
+    "regex": ["corn.?starch"]
+  },
+  {
+    "code": "APST0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["전분유", "starch slurry", "淀粉液", "澱粉スラリー", "hồ tinh bột"],
+    "regex": ["starch.?slurry"]
+  },
+  {
+    "code": "APST0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["타피오카분말", "tapioca powder", "木薯粉", "タピオカ粉", "bột tapioca"],
+    "regex": ["tapioca.?powder"]
+  },
+  {
+    "code": "APSV0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["마늘분말", "garlic powder", "蒜粉", "ガーリックパウダー", "bột tỏi"],
+    "regex": ["garlic.?powder"]
+  },
+  {
+    "code": "APSV0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["마늘농축액", "garlic concentrate", "蒜濃縮液", "ガーリック濃縮", "tỏi cô đặc"],
+    "regex": ["garlic.?concentrate"]
+  },
+  {
+    "code": "APSV0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["마늘페이스트", "마늘퓨레", "garlic paste", "garlic puree", "蒜ペースト", "ガーリックピューレ", "tỏi nghiền"],
+    "regex": ["garlic.?paste", "garlic.?puree"]
+  },
+  {
+    "code": "APSV0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["양파분말", "onion powder", "洋葱粉", "オニオンパウダー", "bột hành tây"],
+    "regex": ["onion.?powder"]
+  },
+  {
+    "code": "APSV0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["양파농축액", "onion concentrate", "洋葱濃縮", "オニオン濃縮", "hành tây cô đặc"],
+    "regex": ["onion.?concentrate"]
+  },
+  {
+    "code": "APSV0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["양파페이스트", "onion paste", "onion puree", "洋葱泥", "オニオンペースト", "hành nghiền"],
+    "regex": ["onion.?paste", "onion.?puree"]
+  },
+  {
+    "code": "APSV0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["대파분말", "green onion powder", "大葱粉", "ネギパウダー", "bột hành lá"],
+    "regex": ["green.?onion.?powder"]
+  },
+  {
+    "code": "APSV0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["대파농축액", "green onion concentrate", "大葱濃縮", "ネギ濃縮", "hành lá cô đặc"],
+    "regex": ["green.?onion.?concentrate"]
+  },
+  {
+    "code": "APSV0090",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["대파페이스트", "green onion paste", "大葱ペースト", "ネギペースト", "hành lá nghiền"],
+    "regex": ["green.?onion.?paste"]
+  },
+  {
+    "code": "APSV0100",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["생강분말", "ginger powder", "姜粉", "ジンジャーパウダー", "bột gừng"],
+    "regex": ["ginger.?powder"]
+  },
+  {
+    "code": "APSV0110",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["생강농축액", "ginger concentrate", "姜濃縮", "ジンジャー濃縮", "gừng cô đặc"],
+    "regex": ["ginger.?concentrate"]
+  },
+  {
+    "code": "APSV0120",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["생강페이스트", "ginger paste", "姜ペースト", "ジンジャーペースト", "gừng nghiền"],
+    "regex": ["ginger.?paste"]
+  },
+   {
+    "code": "BCAC0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["인산", "phosphoric acid", "磷酸", "リン酸", "axít photphoric"],
+    "regex": ["phosphoric.?acid"]
+  },
+  {
+    "code": "BCAC0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["염산", "hydrochloric acid", "盐酸", "塩酸", "axít hydrochloric"],
+    "regex": ["hydrochloric.?acid", "HCl"]
+  },
+  {
+    "code": "BCAC0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["질산", "nitric acid", "硝酸", "硝酸", "axít nitric"],
+    "regex": ["nitric.?acid", "\\bHNO3\\b"]
+  },
+  {
+    "code": "BCAC0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["황산", "sulfuric acid", "硫酸", "硫酸", "axít sulfuric"],
+    "regex": ["sulfuric.?acid", "\\bH2SO4\\b"]
+  },
+  {
+    "code": "BCAC0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["붕산", "boric acid", "硼酸", "ホウ酸", "axít boric"],
+    "regex": ["boric.?acid"]
+  },
+   {
+    "code": "BCAL0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["가성소다", "caustic soda", "苛性ソーダ", "烧碱", "xút (lỏng)", "caustic soda liquid"],
+    "regex": ["caustic.?soda", "sodium.?hydroxide"]
+  },
+  {
+    "code": "BCAL0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["가성소다", "caustic soda solid", "苛性ソーダ 固体", "烧碱 固体", "xút rắn"],
+    "regex": ["caustic.?soda", "sodium.?hydroxide"]
+  },
+  {
+    "code": "BCAL0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["수산화칼륨", "potassium hydroxide", "氢氧化钾", "水酸化カリウム", "kali hydroxit"],
+    "regex": ["potassium.?hydroxide", "\\bKOH\\b"]
+  },
+  {
+    "code": "BCAL0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["수산화칼슘", "calcium hydroxide", "氢氧化钙", "水酸化カルシウム", "canxi hydroxit"],
+    "regex": ["calcium.?hydroxide", "\\bCa\\(OH\\)2\\b"]
+  },
+  {
+    "code": "BCAL0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["수산화칼륨", "potassium hydroxide liquid", "氢氧化钾 溶液", "水酸化カリウム 液体", "kali hydroxit lỏng"],
+    "regex": ["potassium.?hydroxide", "\\bKOH\\b"]
+  },
+  {
+    "code": "BCAL0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["수산화칼륨", "potassium hydroxide solid", "氢氧化钾 固体", "水酸化カリウム 固体", "kali hydroxit rắn"],
+    "regex": ["potassium.?hydroxide", "\\bKOH\\b"]
+  },
+   {
+    "code": "BCER0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["양이온수지", "cation resin", "阳离子树脂", "カチオン樹脂", "nhựa cation"],
+    "regex": ["cation.?resin"]
+  },
+  {
+    "code": "BCER0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["음이온수지", "anion resin", "阴离子树脂", "アニオン樹脂", "nhựa anion"],
+    "regex": ["anion.?resin"]
+  },
+   {
+    "code": "BCFT0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["활성탄", "activated carbon", "活性炭", "活性炭", "than hoạt tính"],
+    "regex": ["activated.?carbon"]
+  },
+  {
+    "code": "BCFT0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["규조토", "diatomite", "硅藻土", "珪藻土", "điatomit"],
+    "regex": ["diatomite", "diatomaceous.?earth"]
+  },
+  {
+    "code": "BCFT0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["백토", "bleaching earth", "漂白土", "漂白土", "đất tẩy trắng"],
+    "regex": ["bleaching.?earth"]
+  },
+  {
+    "code": "BCFT0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["펄라이트", "perlite", "珍珠岩", "パーライト", "perlite"],
+    "regex": ["perlite"]
+  },
+  {
+    "code": "BCFT0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["메쉬", "mesh", "筛网", "メッシュ", "lưới lọc"],
+    "regex": ["mesh"]
+  },
+   {
+    "code": "BCMI0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["암모니아", "ammonia", "氨气", "アンモニア", "amoniac"],
+    "regex": ["ammonia", "\\bNH3\\b"]
+  },
+  {
+    "code": "BCMI0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["질소", "nitrogen", "氮气", "窒素", "nitơ"],
+    "regex": ["nitrogen", "\\bN2\\b"]
+  },
+  {
+    "code": "BCMI0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["아연", "zinc", "锌", "亜鉛", "kẽm"],
+    "regex": ["zinc", "\\bZn\\b"]
+  },
+  {
+    "code": "BCMI0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["몰리브덴산염", "molybdate", "钼酸盐", "モリブデン酸塩", "molypdat"],
+    "regex": ["molybdate"]
+  },
+  {
+    "code": "BCMI0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["헵타몰리브덴산 암모늄", "ammonium heptamolybdate", "七钼酸铵", "ヘプタモリブデン酸アンモニウム", "amoni heptamolybdate"],
+    "regex": ["ammonium.?heptamolybdate"]
+  },
+  {
+    "code": "BCMI0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["유황", "sulfur", "硫磺", "硫黄", "lưu huỳnh"],
+    "regex": ["sulfur"]
+  },
+   {
+    "code": "BCOR0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["메타중아황산나트륨", "sodium metabisulfite", "亚硫酸氢钠", "メタ亜硫酸ナトリウム", "natri metabisulfite"],
+    "regex": ["sodium.?metabisulfite"]
+  },
+  {
+    "code": "BCOR0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["차아염소산나트륨", "sodium hypochlorite", "次氯酸钠", "次亜塩素酸ナトリウム", "natri hypochlorite"],
+    "regex": ["sodium.?hypochlorite"]
+  },
+  {
+    "code": "BCOR0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["아황산수소나트륨", "sodium bisulfite", "重亚硫酸钠", "亜硫酸水素ナトリウム", "natri bisulfite"],
+    "regex": ["sodium.?bisulfite"]
+  },
+  {
+    "code": "BCSA0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["황산구리", "copper sulfate", "硫酸铜", "硫酸銅", "đồng sulfat"],
+    "regex": ["copper.?sulfate"]
+  },
+  {
+    "code": "BCSA0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["황산철", "ferrous sulfate", "硫酸亚铁", "硫酸鉄", "sắt(II) sulfat"],
+    "regex": ["ferrous.?sulfate"]
+  },
+  {
+    "code": "BCSA0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["황산망간", "manganese sulfate", "硫酸锰", "硫酸マンガン", "mangan sulfat"],
+    "regex": ["manganese.?sulfate"]
+  },
+  {
+    "code": "BCSA0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["황산마그네슘", "magnesium sulfate", "硫酸镁", "硫酸マグネシウム", "magie sulfat"],
+    "regex": ["magnesium.?sulfate", "epsom.?salt"]
+  },
+  {
+    "code": "BCSA0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["황산칼슘", "calcium sulfate", "硫酸钙", "硫酸カルシウム", "canxi sulfat"],
+    "regex": ["calcium.?sulfate"]
+  },
+  {
+    "code": "BCSA0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["황산칼륨", "potassium sulfate", "硫酸钾", "硫酸カリウム", "kali sulfat"],
+    "regex": ["potassium.?sulfate"]
+  },
+  {
+    "code": "BCSA0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["염화코발트", "cobalt chloride", "氯化钴", "塩化コバルト", "coban clorua"],
+    "regex": ["cobalt.?chloride"]
+  },
+  {
+    "code": "BCSA0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["황산암모늄", "ammonium sulfate", "硫酸铵", "硫酸アンモニウム", "amoni sulfat"],
+    "regex": ["ammonium.?sulfate", "\\b\\(NH4\\)2SO4\\b"]
+  },
+  {
+    "code": "BCSA0090",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["염화칼슘", "calcium chloride", "氯化钙", "塩化カルシウム", "canxi clorua"],
+    "regex": ["calcium.?chloride"]
+  },
+  {
+    "code": "BCSA0100",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["염화나트륨", "sodium chloride", "氯化钠", "塩化ナトリウム", "natri clorua"],
+    "regex": ["sodium.?chloride", "\\bNaCl\\b"]
+  },
+  {
+    "code": "BCSA0110",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["일인산칼륨", "monopotassium phosphate", "磷酸二氢钾", "リン酸一カリウム", "kali dihydrophosphate"],
+    "regex": ["monopotassium.?phosphate", "\\bMKP\\b"]
+  },
+  {
+    "code": "BCSA0120",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["sodium polyphosphate", "폴리인산나트륨", "多聚磷酸钠", "ポリリン酸ナトリウム", "natri polyphosphate"],
+    "regex": ["sodium.?polyphosphate"]
+  },
+  {
+    "code": "BCSA0130",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["인산암모늄", "ammonium phosphate", "磷酸铵", "リン酸アンモニウム", "amoni phosphat"],
+    "regex": ["ammonium.?phosphate"]
+  },
+  {
+    "code": "BCSA0140",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["이인산칼륨", "dipotassium phosphate", "磷酸二钾", "リン酸二カリウム", "dipotassium phosphate"],
+    "regex": ["dipotassium.?phosphate", "\\bDKP\\b"]
+  },
+  {
+    "code": "BCSA0150",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["헥사메타인산나트륨", "sodium hexametaphosphate", "六偏磷酸钠", "ヘキサメタリン酸ナトリウム", "natri hexametaphosphate"],
+    "regex": ["sodium.?hexametaphosphate"]
+  },
+  {
+    "code": "BCSA0160",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["시트르산삼나트륨", "trisodium citrate", "枸橼酸三钠", "クエン酸三ナトリウム", "natri citrate"],
+    "regex": ["trisodium.?citrate"]
+  },
+  {
+    "code": "BCSA0170",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["황산아연", "zinc sulfate", "硫酸锌", "硫酸亜鉛", "kẽm sulfat"],
+    "regex": ["zinc.?sulfate"]
+  },
+  {
+    "code": "BCSA0180",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["염화암모늄", "ammonium chloride", "氯化铵", "塩化アンモニウム", "amoni clorua"],
+    "regex": ["ammonium.?chloride"]
+  },
+  {
+    "code": "BCSA0190",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["구연산나트륨", "sodium citrate", "枸橼酸钠", "クエン酸ナトリウム", "natri citrate"],
+    "regex": ["sodium.?citrate"]
+  },
+  {
+    "code": "BCSA0200",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["황산알루미늄칼륨", "potassium aluminum sulfate", "硫酸铝钾", "硫酸アルミニウムカリウム", "kali nhôm sulfat"],
+    "regex": ["potassium.?aluminum.?sulfate", "alum"]
+  },
+  {
+    "code": "BCSL0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["자일렌", "xylene", "二甲苯", "キシレン", "xylen"],
+    "regex": ["xylene"]
+  },
+  {
+    "code": "BCSL0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["에탄올", "ethanol", "乙醇", "エタノール", "etanol"],
+    "regex": ["ethanol", "ethyl.?alcohol"]
+  },
+  {
+    "code": "BCSL0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["모노에틸렌글리콜", "monoethylene glycol", "乙二醇", "モノエチレングリコール", "mono ethylene glycol"],
+    "regex": ["monoethylene.?glycol", "\\bMEG\\b"]
+  },
+  {
+  "code": "CDCS0010",
+  "type": "ROH1",
+  "priority": 1,
+  "keywords": ["시즈닝류", "seasonings", "调味料", "シーズニング", "gia vị tổng hợp"],
+  "regex": ["^seasonings?$"]
+  },
+  {
+  "code": "CDDS0010",
+  "type": "ROH1",
+  "priority": 1,
+  "keywords": ["케첩", "ketchup", "番茄酱", "ケチャップ", "tương cà"],
+  "regex": ["ketchup"]
+  },
+  {
+  "code": "CDDS0020",
+  "type": "ROH1",
+  "priority": 1,
+  "keywords": ["마요네즈", "mayonnaise", "蛋黄酱", "マヨネーズ", "sốt mayo"],
+  "regex": ["mayonnaise", "mayo"]
+  },
+  {
+  "code": "CDDS0030",
+  "type": "ROH1",
+  "priority": 1,
+  "keywords": ["양념장", "seasoning sauce", "调味酱", "味付けソース", "nước sốt gia vị"],
+  "regex": ["^seasoning.?sauce$"]
+  },
+  {
+  "code": "CDDS0040",
+  "type": "ROH1",
+  "priority": 1,
+  "keywords": ["짜장", "춘장", "jjajang", "chunjang", "炸酱", "春酱", "ジャージャン", "甜面酱", "tương đen"],
+  "regex": ["jjajang", "chunjang", "black.?bean.?sauce"]
+  },
+  {
+  "code": "CDDS0050",
+  "type": "ROH1",
+  "priority": 1,
+  "keywords": ["카레", "curry", "咖喱酱", "カレーソース", "nước sốt cà ri"],
+  "regex": ["curry.?sauce"]
+  },
+  {
+  "code": "CDDS0060",
+  "type": "ROH1",
+  "priority": 1,
+  "keywords": ["액당", "liquid sugar", "시럽류", "syrups", "糖浆", "シロップ", "xi-rô"],
+  "regex": ["liquid.?sugar"]
+  },
+  {
+    "code": "CDFM0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["간장", "soy sauce", "酱油", "醤油", "nước tương"],
+    "regex": ["soy.?sauce"]
+  },
+  {
+    "code": "CDFM0011",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["양조간장", "brewed soy sauce", "釀造醬油", "醸造醤油", "nước tương lên men"],
+    "regex": ["brewed.?soy.?sauce"]
+  },
+  {
+    "code": "CDFM0012",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["진간장", "dark soy sauce", "老抽", "濃口醤油", "nước tương đậm đặc"],
+    "regex": ["dark.?soy.?sauce"]
+  },
+  {
+    "code": "CDFM0013",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["국간장", "light soy sauce", "生抽", "淡口醤油", "nước tương nhạt"],
+    "regex": ["light.?soy.?sauce"]
+  },
+  {
+    "code": "CDFM0014",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["혼합간장", "blended soy sauce", "混合酱油", "ブレンド醤油", "nước tương pha trộn"],
+    "regex": ["blended.?soy.?sauce"]
+  },
+  {
+    "code": "CDFM0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["고추장", "gochujang", "辣椒酱", "コチュジャン", "tương ớt đỏ Hàn Quốc"],
+    "regex": ["gochujang"]
+  },
+  {
+    "code": "CDFM0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["된장", "soybean paste", "味噌", "大豆味噌", "tương đậu nành"],
+    "regex": ["soybean.?paste", "doenjang"]
+  },
+  {
+    "code": "CDFM0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["쌈장", "ssamjang", "包饭酱", "サムジャン", "tương chấm ssam"],
+    "regex": ["ssamjang"]
+  },
+  {
+    "code": "CDFM0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["청국장", "fermented soybean", "納豆", "発酵大豆", "đậu tương lên men"],
+    "regex": ["fermented.?soybean"]
+  },
+
+  {
+    "code": "CDOT0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["식초", "vinegar", "醋", "ビネガー", "giấm"],
+    "regex": ["vinegar"]
+  },
+  {
+    "code": "CDOT9990",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["기타조미식품", "other condiments"],
+    "regex": []
+  },
+  {
+    "code": "CDSA0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["꽃소금", "flower salt", "花盐", "フラワーソルト", "muối hạt"],
+    "regex": ["flower.?salt"]
+  },
+  {
+    "code": "CDSA0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["맛소금", "flavored salt", "调味盐", "味付け塩", "muối gia vị"],
+    "regex": ["flavored.?salt"]
+  },
+  {
+    "code": "CDSA0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["재제염", "recrystallized salt", "再製塩", "再结晶盐", "muối tinh chế lại"],
+    "regex": ["recrystallized.?salt"]
+  },
+  {
+    "code": "CDSA0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["정제염", "refined salt", "精制盐", "精製塩", "muối tinh luyện"],
+    "regex": ["refined.?salt"]
+  },
+  {
+    "code": "CDSA0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["천일염", "sea salt", "海盐", "海塩", "muối biển"],
+    "regex": ["sea.?salt"]
+  },
+  {
+    "code": "CDSA0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["암염", "rock salt", "岩盐", "岩塩", "muối đá"],
+    "regex": ["rock.?salt"]
+  },
+  {
+    "code": "CDSP0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["후추", "black pepper", "黑胡椒", "ブラックペッパー", "tiêu đen"],
+    "regex": ["black.?pepper"]
+  },
+  {
+    "code": "CDSP0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["겨자", "mustard", "芥末", "マスタード", "mù tạt"],
+    "regex": ["mustard"]
+  },
+  {
+    "code": "CDSP0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["계피", "cinnamon", "肉桂", "シナモン", "quế"],
+    "regex": ["cinnamon"]
+  },
+  {
+    "code": "CDSP0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["와사비", "wasabi", "山葵", "ワサビ", "mù tạt xanh"],
+    "regex": ["wasabi"]
+  },
+  {
+    "code": "CDSP0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["카레분", "curry powder", "咖喱粉", "カレーパウダー", "bột cà ri"],
+    "regex": ["curry.?powder"]
+  },
+  {
+    "code": "CDSP0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["올레오레진", "oleoresin", "油树脂", "オレオレジン", "oleoresin"],
+    "regex": ["oleoresin"]
+  },
+  {
+    "code": "FACO0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["착색료", "coloring agent", "着色料", "着色剂", "chất tạo màu"],
+    "regex": ["coloring.?agent"]
+  },
+  {
+    "code": "FACO0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["탈색제", "decolorizing agent", "脱色剤", "脱色剂", "chất tẩy màu"],
+    "regex": ["decolorizing.?agent"]
+  },
+  {
+    "code": "FACO0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["발색제", "color fixative", "発色剤", "固色剂", "chất cố định màu"],
+    "regex": ["color.?fixative"]
+  },
+  {
+    "code": "FAFO0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["향료", "flavoring agent", "香料", "フレーバリング剤", "hương liệu"],
+    "regex": ["flavoring.?agent"]
+  },
+  {
+    "code": "FAFO0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["향미증진제", "flavour enhancer", "增味剂", "フレーバーエンハンサー", "chất tăng hương vị"],
+    "regex": ["flavou?r.?enhancer"]
+  },
+  {
+    "code": "FAFO0021",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["치킨향", "chicken flavor", "鸡肉香精", "チキンフレーバー", "hương gà"],
+    "regex": ["chicken.?flavou?r"]
+  },
+  {
+    "code": "FAFO0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["알콜류", "alcohols", "酒精類", "アルコール類", "các loại cồn"],
+    "regex": ["alcohols"]
+  },
+  {
+    "code": "FAFO0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["효모추출물", "yeast extract", "酵母抽出物", "酵母エキス", "chiết xuất men"],
+    "regex": ["yeast.?extract"]
+  },
+  {
+    "code": "FAFO0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["MSG", "monosodium glutamate", "谷氨酸钠", "グルタミン酸ナトリウム", "mì chính"],
+    "regex": ["\\bMSG\\b", "monosodium.?glutamate"]
+  },
+  {
+    "code": "FAFO0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["I+G 핵산조미료", "inosinate guanylate", "呈味核苷酸二钠", "イノシン酸・グアニル酸 Na", "hương vị I+G"],
+    "regex": ["inosinate", "guanylate", "I.?\\+.?G"]
+  },
+  {
+    "code": "FAFO0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["효소제", "enzyme preparations", "酵素製剤", "酶制剂", "chế phẩm enzyme"],
+    "regex": ["enzyme.?preparations?"]
+  },
+  {
+    "code": "FAFO0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["감미료", "sweetener", "甜味剂", "甘味料", "chất tạo ngọt"],
+    "regex": ["sweetener"]
+  },
+  {
+    "code": "FAIM0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["염지제", "curing agent", "腌制剂", "キュアリング剤", "chất ướp"],
+    "regex": ["curing.?agent"]
+  },
+  {
+    "code": "FAIM0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["개량제", "improver", "改良剤", "改良剂", "chất cải tiến"],
+    "regex": ["\\bimprover\\b"]
+  },
+  {
+    "code": "FAIM0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["유화제", "emulsifier", "乳化剤", "乳化剂", "chất nhũ hóa"],
+    "regex": ["emulsifier"]
+  },
+  {
+    "code": "FAIM0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["증점제", "결착제", "thickener", "binder", "増粘剤", "結着剤", "增稠剂", "黏合剂", "chất làm đặc", "chất kết dính"],
+    "regex": ["thickener", "binder"]
+  },
+  {
+    "code": "FAIM0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["팽창제", "효모", "leavening agent", "yeast leavening", "膨張剤", "酵母膨化", "发酵膨松剂", "men nở"],
+    "regex": ["leavening.?agent", "leaven"]
+  },
+  {
+    "code": "FAIM0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["겔 형성제", "gel forming agent", "ゲル化剤", "成胶剂", "chất tạo gel"],
+    "regex": ["gel.?forming.?agent"]
+  },
+  {
+    "code": "FAIM0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["생물학적 발효", "biological leavening", "生物発酵", "生物发酵膨松", "lên men sinh học"],
+    "regex": ["biological.?leaven"]
+  },
+  {
+    "code": "FAIM0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["베이킹파우더", "baking powder", "泡打粉", "ベーキングパウダー", "bột nở"],
+    "regex": ["baking.?powder"]
+  },
+  {
+    "code": "FAIM0090",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["응고제", "coagulant", "凝固剤", "凝固剂", "chất đông tụ"],
+    "regex": ["coagulant"]
+  },
+  {
+    "code": "FANE0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["비타민", "vitamin", "维生素", "ビタミン", "vitamin tổng hợp"],
+    "regex": ["vitamin"]
+  },
+  {
+    "code": "FANE0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["콜라겐", "collagen", "胶原蛋白", "コラーゲン", "collagen"],
+    "regex": ["collagen"]
+  },
+   {
+    "code": "FASB0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["보존제", "preservative", "防腐剂", "保存料", "chất bảo quản"],
+    "regex": ["preservative"]
+  },
+  {
+    "code": "FASB0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["산화방지제", "antioxidant", "抗氧化剂", "酸化防止剤", "chất chống oxy hóa"],
+    "regex": ["antioxidant"]
+  },
+  {
+    "code": "FASB0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["산도조절제", "acidity regulator", "酸度调节剂", "酸度調整剤", "chất điều chỉnh độ chua"],
+    "regex": ["acidity.?regulator"]
+  },
+  {
+    "code": "FASB0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["항균제", "antimicrobial agent", "抗菌剂", "抗菌剤", "chất kháng khuẩn"],
+    "regex": ["antimicrobial.?agent"]
+  },
+
+  {
+    "code": "FUFC0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["피트산", "phytic acid", "植酸", "フィチン酸", "axit phytic"],
+    "regex": ["phytic.?acid"]
+  },
+  {
+    "code": "FUFC0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["베타인", "betaine", "甜菜碱", "ベタイン", "betaine"],
+    "regex": ["betaine"]
+  },
+  {
+    "code": "FUFC0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["P아미노벤조산", "paba", "对氨基苯甲酸", "パラアミノ安息香酸", "paba"],
+    "regex": ["\\bPABA\\b", "para.?aminobenzoic.?acid"]
+  },
+
+  {
+    "code": "FUND0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["아데닌", "adenine", "腺嘌呤", "アデニン", "adenin"],
+    "regex": ["adenine"]
+  },
+  {
+    "code": "FUND0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["구아닌", "guanine", "鸟嘌呤", "グアニン", "guanin"],
+    "regex": ["guanine"]
+  },
+  {
+    "code": "FUND0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["adenosine", "adenosine", "腺苷", "アデノシン", "adenosine"],
+    "regex": ["adenosine"]
+  },
+  {
+    "code": "FUND0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["guanosine", "guanosine", "鳥苷", "グアノシン", "guanosine"],
+    "regex": ["guanosine"]
+  },
+
+  {
+    "code": "FUOA0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["사과산", "malic acid", "苹果酸", "マリック酸", "axit malic"],
+    "regex": ["malic.?acid"]
+  },
+  {
+    "code": "FUOA0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["석신산", "succinic acid", "琥珀酸", "コハク酸", "axit succinic"],
+    "regex": ["succinic.?acid"]
+  },
+
+  {
+    "code": "FUPA0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["펩톤", "peptone", "蛋白胨", "ペプトン", "peptone"],
+    "regex": ["peptone"]
+  },
+  {
+    "code": "FUPA0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["알라닌", "alanine", "丙氨酸", "アラニン", "alanine"],
+    "regex": ["alanine"]
+  },
+  {
+    "code": "FUPA0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["히스티딘", "histidine", "组氨酸", "ヒスチジン", "histidine"],
+    "regex": ["histidine"]
+  },
+  {
+    "code": "FUPA0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["시스테인", "cysteine", "半胱氨酸", "システイン", "cysteine"],
+    "regex": ["cysteine"]
+  },
+  {
+    "code": "FUPA0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["페닐알라닌", "phenylalanine", "苯丙氨酸", "フェニルアラニン", "phenylalanine"],
+    "regex": ["phenylalanine"]
+  },
+  {
+    "code": "FUPA0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["티로신", "tyrosine", "酪氨酸", "チロシン", "tyrosine"],
+    "regex": ["tyrosine"]
+  },
+  {
+    "code": "FUPA0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["이소류신", "isoleucine", "异亮氨酸", "イソロイシン", "isoleucine"],
+    "regex": ["isoleucine"]
+  },
+  {
+    "code": "FUPA0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["메치오닌", "methionine", "蛋氨酸", "メチオニン", "methionine"],
+    "regex": ["methionine"]
+  },
+
+  {
+    "code": "FUVI0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["니코티나마이드", "niacinamide", "烟酰胺", "ナイアシンアミド", "niacinamide"],
+    "regex": ["niacinamide", "nicotinamide"]
+  },
+  {
+    "code": "FUVI0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["티아민", "thiamine", "硫胺素", "チアミン", "thiamine"],
+    "regex": ["thiamine"]
+  },
+  {
+    "code": "FUVI0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["바이오틴", "biotin", "生物素", "ビオチン", "biotin"],
+    "regex": ["biotin"]
+  },
+  {
+    "code": "FUVI0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["피리독살인산", "pyridoxal phosphate", "磷酸吡哆醛", "ピリドキサールリン酸", "pyridoxal phosphate"],
+    "regex": ["pyridoxal.?phosphate"]
+  },
+  {
+    "code": "FUVI0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["판토텐산칼슘", "calcium pantothenate", "泛酸钙", "パントテン酸カルシウム", "calci pantothenate"],
+    "regex": ["calcium.?pantothenate"]
+  },
+  {
+  "code": "FUAN0010",
+  "type": "ROH1",
+  "priority": 1,
+  "keywords": ["스트렙토마이신", "streptomycin", "链霉素", "ストレプトマイシン", "streptomycin"],
+  "regex": ["streptomycin"]
+  },
+  {
+  "code": "APSG0270",
+  "type": "ROH1",
+  "priority": 1,
+  "keywords": ["옥수수 침지액", "corn steep liquor", "CSL", "玉米浸出液", "コーンスティープリカー", "nước ngâm ngô"],
+  "regex": ["corn.?steep.?liquor", "\\bCSL\\b"]
+  },
+  {
+    "code": "GIDL0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["돌김", "stone laver", "石海苔", "ストーン海苔", "rong biển đá"],
+    "regex": ["stone.?laver"]
+  },
+  {
+    "code": "GIDL0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["재래김", "traditional laver", "伝統海苔", "传统海苔", "rong biển truyền thống"],
+    "regex": ["traditional.?laver"]
+  },
+  {
+    "code": "GIDL0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["재래돌김", "traditional stone laver"],
+    "regex": ["traditional.?stone.?laver"]
+  },
+  {
+    "code": "GIDL0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["파래재래김", "green laver traditional", "青のり海苔", "绿海苔传统"],
+    "regex": ["green.?laver.?traditional"]
+  },
+  {
+    "code": "GIDL0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["편김", "sheet laver", "板海苔", "シート海苔"],
+    "regex": ["sheet.?laver"]
+  },
+  {
+    "code": "GIJB0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["파래자반", "green laver flakes", "青のりふりかけ", "绿海苔碎片"],
+    "regex": ["green.?laver.?flakes"]
+  },
+  {
+    "code": "GIJB0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["돌김자반", "laver flakes", "海苔碎片"],
+    "regex": ["laver.?flakes"]
+  },
+  {
+    "code": "GIJB0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["재래돌김자반", "traditional laver flakes"],
+    "regex": ["traditional.?laver.?flakes"]
+  },
+  {
+  "code": "LLBF0010",
+  "type": "ROH1",
+  "priority": 1,
+  "keywords": ["갈비", "ribs", "牛カルビ"],
+  "regex": ["\\bribs?\\b"]
+  },
+  {
+  "code": "LLBF0011",
+  "type": "ROH1",
+  "priority": 1,
+  "keywords": ["갈비 (한국산)", "ribs (KR)", "韓国産カルビ"],
+  "regex": ["ribs.*KR", "한국산.*갈비"]
+  },
+  {
+  "code": "LLBF0020",
+  "type": "ROH1",
+  "priority": 1,
+  "keywords": ["꼬리", "tail", "牛テール"],
+  "regex": ["\\btail\\b"]
+  },
+  {
+  "code": "LLBF0021",
+  "type": "ROH1",
+  "priority": 1,
+  "keywords": ["꼬리 (한국산)", "tail (KR)"],
+  "regex": ["tail.*KR", "한국산.*꼬리"]
+  },
+  {
+  "code": "LLBF0030",
+  "type": "ROH1",
+  "priority": 1,
+  "keywords": ["목심", "neck", "chuck roll"],
+  "regex": ["chuck.?roll", "neck.?roll"]
+  },
+  {
+  "code": "LLBF0031",
+  "type": "ROH1",
+  "priority": 1,
+  "keywords": ["목심 (한국산)", "chuck roll (KR)"],
+  "regex": ["chuck.?roll.*KR", "한국산.*목심"]
+  },
+  {
+    "code": "LLBF0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["백립", "back ribs"],
+    "regex": ["back.?ribs"]
+  },
+  {
+    "code": "LLBF0041",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["백립 (한국산)", "back ribs (KR)"],
+    "regex": ["back.?ribs.*KR", "한국산.*백립"]
+  },
+
+  {
+    "code": "LLBF0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["볼살", "cheek meat"],
+    "regex": ["cheek.?meat"]
+  },
+  {
+    "code": "LLBF0051",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["볼살 (한국산)", "cheek meat (KR)"],
+    "regex": ["cheek.?meat.*KR", "한국산.*볼살"]
+  },
+
+  {
+    "code": "LLBF0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["사태", "shank"],
+    "regex": ["\\bshank\\b"]
+  },
+  {
+    "code": "LLBF0061",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["사태 (한국산)", "shank (KR)"],
+    "regex": ["shank.*KR", "한국산.*사태"]
+  },
+
+  {
+    "code": "LLBF0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["숏립", "short ribs"],
+    "regex": ["short.?ribs"]
+  },
+  {
+    "code": "LLBF0071",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["숏립 (한국산)", "short ribs (KR)"],
+    "regex": ["short.?ribs.*KR", "한국산.*숏립"]
+  },
+
+  {
+    "code": "LLBF0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["스지", "tendon"],
+    "regex": ["tendon"]
+  },
+  {
+    "code": "LLBF0081",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["스지 (한국산)", "tendon (KR)"],
+    "regex": ["tendon.*KR", "한국산.*스지"]
+  },
+
+  {
+    "code": "LLBF0090",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["안심", "tenderloin"],
+    "regex": ["tenderloin"]
+  },
+  {
+    "code": "LLBF0091",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["안심 (한국산)", "tenderloin (KR)"],
+    "regex": ["tenderloin.*KR", "한국산.*안심"]
+  },
+
+  {
+    "code": "LLBF0100",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["양지", "brisket"],
+    "regex": ["brisket"]
+  },
+  {
+    "code": "LLBF0101",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["양지 (한국산)", "brisket (KR)"],
+    "regex": ["brisket.*KR", "한국산.*양지"]
+  },
+
+  {
+    "code": "LLBF0110",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["우둔", "round"],
+    "regex": ["\\bround\\b"]
+  },
+  {
+    "code": "LLBF0111",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["우둔 (한국산)", "round (KR)"],
+    "regex": ["round.*KR", "한국산.*우둔"]
+  },
+
+  {
+    "code": "LLBF0120",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["우정육", "beef trimmings"],
+    "regex": ["trimmings"]
+  },
+  {
+    "code": "LLBF0121",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["우정육 (한국산)", "beef trimmings (KR)"],
+    "regex": ["trimmings.*KR", "한국산.*우정육"]
+  },
+
+  {
+    "code": "LLBF0130",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["우지방", "beef fat", "tallow"],
+    "regex": ["beef.?fat", "tallow"]
+  },
+  {
+    "code": "LLBF0131",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["우지방 (한국산)", "beef fat (KR)"],
+    "regex": ["beef.?fat.*KR", "한국산.*우지방"]
+  },
+
+  {
+    "code": "LLBF0140",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["전각", "forequarter"],
+    "regex": ["forequarter"]
+  },
+  {
+    "code": "LLBF0141",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["전각 (한국산)", "forequarter (KR)"],
+    "regex": ["forequarter.*KR", "한국산.*전각"]
+  },
+
+  {
+    "code": "LLBF0150",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["척숏립", "chuck short ribs"],
+    "regex": ["chuck.?short.?ribs"]
+  },
+  {
+    "code": "LLBF0151",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["척숏립 (한국산)", "chuck short ribs (KR)"],
+    "regex": ["chuck.?short.?ribs.*KR", "한국산.*척숏립"]
+  },
+
+  {
+    "code": "LLBF0160",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["치마살", "skirt steak"],
+    "regex": ["skirt.?steak"]
+  },
+  {
+    "code": "LLBF0161",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["치마살 (한국산)", "skirt steak (KR)"],
+    "regex": ["skirt.?steak.*KR", "한국산.*치마살"]
+  },
+
+  {
+    "code": "LLBF0180",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["다짐육", "minced beef"],
+    "regex": ["minced.?beef"]
+  },
+
+  {
+    "code": "LLCKB010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["육계 가슴살", "broiler breast", "chicken breast"],
+    "regex": ["broiler.?breast", "chicken.?breast"]
+  },
+  {
+    "code": "LLCKB011",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["육계 가슴살-규격", "broiler breast (sized)"],
+    "regex": ["broiler.?breast.*sized"]
+  },
+  {
+    "code": "LLCKB012",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["육계 가슴살-비규격", "broiler breast (unsized)"],
+    "regex": ["broiler.?breast.*unsized"]
+  },
+  {
+    "code": "LLCKB013",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["육계 가슴살-검역", "broiler breast (quarantine)"],
+    "regex": ["broiler.?breast.*quarantine"]
+  },
+  {
+    "code": "LLCKB014",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["육계 가슴살-태국산", "broiler breast (TH)"],
+    "regex": ["broiler.?breast.*TH", "태국산.*가슴살"]
+  },
+  {
+    "code": "LLCKB015",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["육계 가슴살-세절", "broiler breast (diced)"],
+    "regex": ["broiler.?breast.*diced"]
+  },
+  {
+    "code": "LLCKB016",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["육계 가슴살-트리밍", "broiler breast (trimming)"],
+    "regex": ["broiler.?breast.*trimming"]
+  },
+  {
+    "code": "LLCKB017",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["육계 가슴살-가공", "broiler breast (processed)"],
+    "regex": ["broiler.?breast.*processed"]
+  },
+
+  {
+    "code": "LLCKB020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["육계 부산물", "broiler by-products"],
+    "regex": ["by.?products"]
+  },
+
+  {
+    "code": "LLCKB030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["육계 MDCM", "broiler mdcm"],
+    "regex": ["MDCM"]
+  },
+
+  {
+    "code": "LLCKB040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["육계 다리살", "broiler leg meat"],
+    "regex": ["leg.?meat"]
+  },
+  {
+    "code": "LLCKB041",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["육계 다리살 (한국산)", "broiler leg meat (KR)"],
+    "regex": ["leg.?meat.*KR", "한국산.*다리"]
+  },
+  {
+    "code": "LLCKB042",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["육계 다리살 (브라질산)", "broiler leg meat (BR)"],
+    "regex": ["leg.?meat.*BR", "브라질.*다리"]
+  },
+  {
+    "code": "LLCKB043",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["육계 다리살 (태국산)", "broiler leg meat (TH)"],
+    "regex": ["leg.?meat.*TH", "태국.*다리"]
+  },
+  {
+    "code": "LLCKB044",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["육계 다리살 (기타)", "broiler leg meat (OTH)"],
+    "regex": ["leg.?meat.*OTH"]
+  },
+  {
+    "code": "LLCKB045",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["북채살", "drumstick meat"],
+    "regex": ["drumstick.?meat"]
+  },
+  {
+    "code": "LLCKB046",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["싸이정육", "thigh meat"],
+    "regex": ["thigh.?meat"]
+  },
+  {
+    "code": "LLCKB047",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["통정육", "whole leg meat"],
+    "regex": ["whole.?leg.?meat"]
+  },
+
+  {
+    "code": "LLCKB050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["육계 윙", "broiler mid joint wing"],
+    "regex": ["mid.?joint.?wing"]
+  },
+  {
+    "code": "LLCKB060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["육계 봉", "broiler drumette"],
+    "regex": ["drumette"]
+  },
+  {
+    "code": "LLCKB070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["육계 안심", "broiler tender"],
+    "regex": ["tender"]
+  },
+
+  {
+    "code": "LLCKBB10",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["종계 가슴살", "broiler breeder breast"],
+    "regex": ["breeder.?breast"]
+  },
+  {
+    "code": "LLCKBB20",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["종계 정육", "broiler breeder meat"],
+    "regex": ["breeder.?meat"]
+  },
+  {
+    "code": "LLCKBB30",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["종계 MDCM", "broiler breeder mdcm"],
+    "regex": ["MDCM"]
+  },
+
+  {
+    "code": "LLCKSH10",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["산란노계 가슴살", "spent hen breast"],
+    "regex": ["spent.?hen.?breast"]
+  },
+  {
+    "code": "LLCKSH20",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["산란노계 계정육", "spent hen meat"],
+    "regex": ["spent.?hen.?meat"]
+  },
+
+  {
+    "code": "LLEG0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["브랜드란", "branded eggs"],
+    "regex": ["branded.?eggs"]
+  },
+  {
+    "code": "LLEG0011",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["동물복지란", "animal welfare eggs"],
+    "regex": ["animal.?welfare.?eggs"]
+  },
+
+  {
+    "code": "LLEG0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["가공란", "processed eggs", "加工蛋", "加工卵", "trứng chế biến"],
+    "regex": ["processed.?eggs"]
+  },
+  {
+    "code": "LLEG0021",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["훈제란", "smoked eggs", "熏蛋", "燻製卵", "trứng hun khói"],
+    "regex": ["smoked.?eggs"]
+  },
+  {
+    "code": "LLEG0022",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["구운란", "baked eggs", "烤蛋", "焼き卵", "trứng nướng"],
+    "regex": ["baked.?eggs"]
+  },
+  {
+    "code": "LLEG0023",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["반숙란", "soft boiled eggs", "溏心蛋", "半熟卵", "trứng lòng đào"],
+    "regex": ["soft.?boiled.?eggs"]
+  },
+  {
+    "code": "LLEG0024",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["깐계란", "peeled boiled eggs", "去壳煮蛋", "ゆで卵(皮むき)", "trứng luộc bóc vỏ"],
+    "regex": ["peeled.?boiled.?eggs"]
+  },
+  {
+    "code": "LLEG0025",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["깐메추리알", "peeled boiled quail eggs", "去壳鹌鹑蛋", "うずら卵(皮むき)", "trứng cút bóc vỏ"],
+    "regex": ["quail.?eggs"]
+  },
+
+  {
+    "code": "LLEG0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["판란", "30 eggs tray", "蛋盘(30个)", "30個入卵トレー", "khay trứng 30 quả"],
+    "regex": ["30.?eggs.?tray"]
+  },
+
+  {
+    "code": "LLOT0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["밀키트축산", "meal kit livestock", "食材包肉类", "ミールキット畜産", "thịt trong meal kit"],
+    "regex": ["meal.?kit.?livestock"]
+  },
+  {
+    "code": "LLOT0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["칠면조", "turkey", "火鸡", "ターキー", "gà tây"],
+    "regex": ["turkey"]
+  },
+  {
+    "code": "LLOT0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["오리", "duck", "鸭肉", "鴨肉", "thịt vịt"],
+    "regex": ["duck"]
+  },
+
+  {
+    "code": "LLPK0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["경제성원료", "economical raw materials", "经济型原料", "経済的原料", "nguyên liệu kinh tế"],
+    "regex": ["economical.?raw.?materials"]
+  },
+  {
+    "code": "LLPK0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["돈육트리밍", "pork trimming", "猪肉修整", "豚肉トリミング", "thịt heo trimming"],
+    "regex": ["pork.?trimming"]
+  },
+  {
+    "code": "LLPK0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["돈등심", "pork loin", "猪里脊", "豚ロース", "thịt thăn heo"],
+    "regex": ["pork.?loin"]
+  },
+  {
+    "code": "LLPK0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["지방", "pork fat", "猪油脂", "豚脂肪", "mỡ heo"],
+    "regex": ["pork.?fat"]
+  },
+  {
+    "code": "LLPK0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["등갈비", "pork back ribs", "猪背肋排", "豚バックリブ", "sườn lưng heo"],
+    "regex": ["pork.?back.?ribs"]
+  },
+  {
+    "code": "LLPK0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["모돈", "sow meat", "母猪肉", "雌豚肉", "thịt nái"],
+    "regex": ["sow.?meat"]
+  },
+  {
+    "code": "LLPK0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["모돈갈비", "sow ribs", "母猪肋排", "雌豚リブ", "sườn nái"],
+    "regex": ["sow.?ribs"]
+  },
+  {
+    "code": "LLPK0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["돈목살", "pork collar", "猪肩颈肉", "豚肩ロース", "thịt vai heo"],
+    "regex": ["pork.?collar"]
+  },
+  {
+    "code": "LLPK0090",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["목전지", "boston butt", "猪肩胛肉", "ボストン・バット", "thịt mông vai heo"],
+    "regex": ["boston.?butt"]
+  },
+  {
+    "code": "LLPK0100",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["부산물", "pork by-products", "猪副产品", "豚副産物", "sản phẩm phụ thịt heo"],
+    "regex": ["by.?products"]
+  },
+  {
+    "code": "LLPK0110",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["삼겹", "pork belly", "五花肉", "豚バラ肉", "thịt ba chỉ"],
+    "regex": ["pork.?belly"]
+  },
+  {
+    "code": "LLPK0120",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["삼겹트리밍", "pork belly trimming", "五花肉修整", "豚バラトリミング", "ba chỉ trimming"],
+    "regex": ["belly.?trimming"]
+  },
+  {
+    "code": "LLPK0130",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["세절삼겹", "sliced pork belly", "切片五花肉", "スライス豚バラ", "ba chỉ thái lát"],
+    "regex": ["sliced.?pork.?belly"]
+  },
+  {
+    "code": "LLPK0140",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["전지", "pork shoulder picnic", "猪肩肉(前腿)", "豚肩ピクニック", "vai heo picnic"],
+    "regex": ["shoulder.?picnic"]
+  },
+  {
+    "code": "LLPK0150",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["후지", "pork ham", "猪后腿肉", "豚ハム", "thịt đùi heo"],
+    "regex": ["pork.?ham"]
+  },
+  {
+    "code": "LLPK0160",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["특수후지", "special ham", "特制火腿", "特製ハム", "thịt đùi đặc biệt"],
+    "regex": ["special.?ham"]
+  },
+  {
+    "code": "LLPK0170",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["쿠션미트", "cushion meat", "肩胛嫩肉", "クッションミート", "thịt cushion"],
+    "regex": ["cushion.?meat"]
+  },
+  {
+    "code": "LLPK0180",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["세절전지", "sliced pork shoulder", "切片猪肩肉", "スライス豚肩", "vai heo thái lát"],
+    "regex": ["sliced.?pork.?shoulder"]
+  },
+  {
+    "code": "LLPK0190",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["세절후지", "sliced pork ham", "切片猪后腿肉", "スライスハム", "đùi heo thái lát"],
+    "regex": ["sliced.?pork.?ham"]
+  },
+
+  {
+    "code": "LPBF0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["소고기엑기스", "beef extract", "牛肉エキス", "牛肉抽出物", "tinh chất bò"],
+    "regex": ["beef.?extract"]
+  },
+  {
+    "code": "LPBF0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["소뼈추출물", "beef bone extract", "牛骨抽出物", "牛骨エキス", "tinh chất xương bò"],
+    "regex": ["bone.?extract"]
+  },
+  {
+    "code": "LPBF0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["소고기분말", "beef powder", "牛肉粉", "牛肉パウダー", "bột bò"],
+    "regex": ["beef.?powder"]
+  },
+  {
+    "code": "LPBF0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["소고기육수", "beef broth", "牛肉汤", "ビーフブロス", "nước dùng bò"],
+    "regex": ["beef.?broth"]
+  },
+  {
+    "code": "LPBF0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["우지", "beef tallow", "牛脂", "ビーフタロー", "mỡ bò"],
+    "regex": ["tallow"]
+  },
+
+  {
+    "code": "LPCK0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "치킨스톡", "치킨엑기스",
+      "chicken stock", "chicken extract",
+      "鸡汤", "鸡肉提取物",
+      "チキンストック", "チキンエキス",
+      "nước dùng gà", "chiết xuất gà"
+    ],
+    "regex": ["chicken.?stock", "chicken.?extract"]
+  },
+  {
+    "code": "LPCK0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "치킨분말", "chicken powder",
+      "鸡肉粉",
+      "チキンパウダー",
+      "bột gà"
+    ],
+    "regex": ["chicken.?powder"]
+  },
+  {
+    "code": "LPCK0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "익힌 치킨", "cooked chicken",
+      "熟鸡肉",
+      "加熱したチキン",
+      "gà nấu chín"
+    ],
+    "regex": ["cooked.?chicken"]
+  },
+
+  {
+    "code": "LPDA0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "버터", "butter",
+      "黄油",
+      "バター",
+      "bơ"
+    ],
+    "regex": ["butter"]
+  },
+  {
+    "code": "LPDA0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "우유", "milk",
+      "牛奶",
+      "ミルク",
+      "sữa"
+    ],
+    "regex": ["\\bmilk\\b"]
+  },
+  {
+    "code": "LPDA0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "유청분말", "whey powder",
+      "乳清粉",
+      "ホエイパウダー",
+      "bột whey"
+    ],
+    "regex": ["whey.?powder"]
+  },
+  {
+    "code": "LPDA0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "유크림", "dairy cream",
+      "奶油",
+      "クリーム",
+      "kem sữa"
+    ],
+    "regex": ["dairy.?cream"]
+  },
+  {
+    "code": "LPDA0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "탈지분유", "skimmed milk powder",
+      "脱脂奶粉",
+      "スキムミルクパウダー",
+      "sữa bột tách béo"
+    ],
+    "regex": ["skimmed.?milk.?powder"]
+  },
+  {
+    "code": "LPDA0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "혼합탈지분유", "mixed skimmed milk powder",
+      "混合脱脂奶粉",
+      "ミックススキムミルクパウダー",
+      "sữa bột tách béo hỗn hợp"
+    ],
+    "regex": ["mixed.?skimmed.?milk.?powder"]
+  },
+  {
+    "code": "LPDA0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "전지분유", "whole milk powder",
+      "全脂奶粉",
+      "全粉乳",
+      "sữa bột nguyên kem"
+    ],
+    "regex": ["whole.?milk.?powder"]
+  },
+  {
+    "code": "LPDA0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "치즈", "cheese",
+      "奶酪",
+      "チーズ",
+      "phô mai"
+    ],
+    "regex": ["cheese"]
+  },
+
+  {
+    "code": "LPEG0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "전란액", "liquid whole egg",
+      "全蛋液",
+      "液卵",
+      "trứng lỏng"
+    ],
+    "regex": ["liquid.?whole.?egg"]
+  },
+  {
+    "code": "LPEG0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "전란분", "whole egg powder",
+      "全蛋粉",
+      "全卵パウダー",
+      "bột trứng"
+    ],
+    "regex": ["whole.?egg.?powder"]
+  },
+  {
+    "code": "LPEG0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "난백", "egg white",
+      "蛋清",
+      "卵白",
+      "lòng trắng trứng"
+    ],
+    "regex": ["egg.?white"]
+  },
+  {
+    "code": "LPEG0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "난황", "egg yolk",
+      "蛋黄",
+      "卵黄",
+      "lòng đỏ trứng"
+    ],
+    "regex": ["egg.?yolk"]
+  },
+  {
+    "code": "LPEG0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "스크램블에그", "scrambled egg",
+      "炒鸡蛋",
+      "スクランブルエッグ",
+      "trứng bác"
+    ],
+    "regex": ["scrambled.?egg"]
+  },
+  {
+    "code": "LPEG0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "지단", "egg garnish", "계란지단",
+      "蛋皮",
+      "錦糸卵",
+      "trứng tráng mỏng"
+    ],
+    "regex": ["egg.?garnish"]
+  },
+
+  {
+    "code": "LPPK0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "돈육엑기스", "pork extract",
+      "猪肉提取物",
+      "ポークエキス",
+      "chiết xuất thịt heo"
+    ],
+    "regex": ["pork.?extract"]
+  },
+  {
+    "code": "LPPK0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "순대", "korean blood sausage", "blood sausage",
+      "血肠",
+      "ソーセージ(スンデ)",
+      "dồi huyết"
+    ],
+    "regex": ["blood.?sausage"]
+  },
+  {
+    "code": "LPPK0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "편육", "pressed pork",
+      "猪肉片(压制)",
+      "押し豚",
+      "thịt heo ép"
+    ],
+    "regex": ["pressed.?pork"]
+  },
+  {
+    "code": "LPPK0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "햄", "소시지",
+      "ham", "sausage", "ham & sausage",
+      "火腿", "香肠",
+      "ハム", "ソーセージ",
+      "giăm bông", "xúc xích"
+    ],
+    "regex": ["ham", "sausage"]
+  },
+  {
+    "code": "LPPK0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "베이컨", "bacon",
+      "培根",
+      "ベーコン",
+      "thịt xông khói"
+    ],
+    "regex": ["bacon"]
+  },
+  {
+    "code": "LPPK0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": [
+      "돈지", "lard",
+      "猪油",
+      "ラード",
+      "mỡ heo"
+    ],
+    "regex": ["lard"]
+  },
+
+  {
+    "code": "LQDI0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["소주", "soju", "烧酒", "焼酎", "rượu soju"],
+    "regex": ["soju"]
+  },
+  {
+    "code": "LQDI0011",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["오크숙성 소주", "oak aged soju", "橡木桶熟成烧酒", "オーク熟成焼酎", "soju ủ gỗ sồi"],
+    "regex": ["oak.?aged.?soju"]
+  },
+  {
+    "code": "LQDI0012",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["옹기숙성 소주", "earthen pot aged soju", "陶罐熟成烧酒", "甕熟成焼酎", "soju ủ chum đất"],
+    "regex": ["earthen.?pot.?aged.?soju"]
+  },
+  {
+    "code": "LQDI0013",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["소주 원액", "raw soju", "生烧酒", "原酒焼酎", "soju nguyên chất"],
+    "regex": ["raw.?soju"]
+  },
+
+  {
+    "code": "LQDI0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["위스키", "whiskey", "威士忌", "ウイスキー", "rượu whisky"],
+    "regex": ["whiskey", "whisky"]
+  },
+  {
+    "code": "LQDI0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["브랜디", "brandy", "白兰地", "ブランデー", "rượu brandy"],
+    "regex": ["brandy"]
+  },
+  {
+    "code": "LQDI0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["일반증류주", "other distilled liquors", "蒸馏酒", "蒸留酒", "rượu chưng cất khác"],
+    "regex": []
+  },
+
+  {
+    "code": "LQDI0041",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["사과 증류주", "distilled apple liquor", "苹果蒸馏酒", "りんご蒸留酒", "rượu táo chưng cất"],
+    "regex": ["apple.?liquor"]
+  },
+  {
+    "code": "LQDI0042",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["배 증류주", "distilled pear liquor", "梨蒸馏酒", "梨蒸留酒", "rượu lê chưng cất"],
+    "regex": ["pear.?liquor"]
+  },
+  {
+    "code": "LQDI0043",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["감귤 증류주", "distilled tangerine liquor", "柑橘蒸馏酒", "みかん蒸留酒", "rượu quýt chưng cất"],
+    "regex": ["tangerine.?liquor"]
+  },
+  {
+    "code": "LQDI0044",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["매실 증류주", "distilled plum liquor", "梅子蒸馏酒", "梅酒蒸留酒", "rượu mận chưng cất"],
+    "regex": ["plum.?liquor"]
+  },
+
+  {
+    "code": "LQDI0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["리큐르", "liqueur", "利口酒", "リキュール", "rượu liqueur"],
+    "regex": ["liqueur"]
+  },
+
+  {
+    "code": "LQFE0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["탁주", "unrefined rice wine", "濁酒", "どぶろく", "rượu gạo truyền thống"],
+    "regex": ["unrefined.?rice.?wine"]
+  },
+  {
+    "code": "LQFE0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["약주", "korean rice wine", "薬酒(米酒)", "韓国米酒", "rượu gạo Hàn Quốc"],
+    "regex": ["korean.?rice.?wine"]
+  },
+  {
+    "code": "LQFE0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["청주", "japanese rice wine", "清酒", "日本酒", "rượu sake"],
+    "regex": ["japanese.?rice.?wine"]
+  },
+  {
+    "code": "LQFE0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["맥주", "beer", "啤酒", "ビール", "bia"],
+    "regex": ["beer"]
+  },
+  {
+    "code": "LQFE0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["과실주", "fruit wine", "果酒", "果実酒", "rượu trái cây"],
+    "regex": ["fruit.?wine"]
+  },
+
+  {
+    "code": "LQOT0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["혼성주", "compounded liquor", "混合酒", "混成酒", "rượu pha trộn"],
+    "regex": ["compounded.?liquor"]
+  },
+
+  {
+    "code": "OPBA0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["빵류", "bakery", "bread", "breads", "dough", "面包", "パン", "bánh mì"],
+    "regex": ["bread", "dough"]
+  },
+
+  {
+    "code": "OPBV0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["음료", "beverage", "drink", "beverages", "饮料", "ドリンク", "đồ uống"],
+    "regex": ["beverage", "drink"]
+  },
+
+  {
+    "code": "OPCA0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["천연장", "natural casing", "天然肠衣", "天然ケーシング", "lòng tự nhiên"],
+    "regex": ["natural.?casing"]
+  },
+  {
+    "code": "OPCA0011",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["돈장", "pork casing", "猪肠衣", "豚腸ケーシング", "lòng heo"],
+    "regex": ["pork.?casing"]
+  },
+  {
+    "code": "OPCA0012",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["양장", "lamb casing", "羊肠衣", "ラムケーシング", "lòng cừu"],
+    "regex": ["lamb.?casing"]
+  },
+  {
+    "code": "OPCA0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["콜라겐케이싱", "collagen casing", "胶原肠衣", "コラーゲンケーシング", "vỏ collagen"],
+    "regex": ["collagen.?casing"]
+  },
+  {
+    "code": "OPCA0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["셀룰로즈 케이싱", "cellulose casing", "纤维素肠衣", "セルロースケーシング", "vỏ cellulose"],
+    "regex": ["cellulose.?casing"]
+  },
+  {
+    "code": "OPCA0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["플라스틱케이싱", "plastic casing", "塑料肠衣", "プラスチックケーシング", "vỏ nhựa"],
+    "regex": ["plastic.?casing"]
+  },
+  {
+    "code": "OPCA0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["화이버러스 케이싱", "fibrous casing", "纤维肠衣", "ファイバーケーシング", "vỏ xơ"],
+    "regex": ["fibrous.?casing"]
+  },
+
+  {
+    "code": "OPOF0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["마가린", "margarine", "人造黄油", "マーガリン", "bơ thực vật"],
+    "regex": ["margarine"]
+  },
+  {
+    "code": "OPOF0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["쇼트닝", "shortening", "起酥油", "ショートニング", "shortening"],
+    "regex": ["shortening"]
+  },
+  {
+    "code": "OPOF0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["올리브유", "olive oil", "橄榄油", "オリーブオイル", "dầu ô liu"],
+    "regex": ["olive.?oil"]
+  },
+  {
+    "code": "OPOF0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["포도씨유", "grape seed oil", "葡萄籽油", "グレープシードオイル", "dầu hạt nho"],
+    "regex": ["grape.?seed.?oil"]
+  },
+  {
+    "code": "OPOF0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["카놀라유", "canola oil", "菜籽油", "キャノーラ油", "dầu cải"],
+    "regex": ["canola.?oil"]
+  },
+  {
+    "code": "OPOF0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["해바라기유", "sunflower oil", "葵花籽油", "ひまわり油", "dầu hướng dương"],
+    "regex": ["sunflower.?oil"]
+  },
+  {
+    "code": "OPOF0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["참기름", "sesame oil", "芝麻油", "ごま油", "dầu mè"],
+    "regex": ["sesame.?oil"]
+  },
+  {
+    "code": "OPOF0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["들기름", "perilla oil", "紫苏油", "えごま油", "dầu tía tô"],
+    "regex": ["perilla.?oil"]
+  },
+  {
+    "code": "OPOF0090",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["콩기름", "soy oil", "soybean oil", "豆油", "大豆油", "大豆油(ジャパン)", "dầu đậu nành"],
+    "regex": ["soy.?oil", "soybean.?oil"]
+  },
+  {
+    "code": "OPOF0100",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["옥수수유", "corn oil", "玉米油", "コーン油", "dầu ngô"],
+    "regex": ["corn.?oil"]
+  },
+  {
+    "code": "OPOF0110",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["팜유", "야자유", "palm oil", "棕榈油", "パーム油", "dầu cọ"],
+    "regex": ["palm.?oil"]
+  },
+  {
+    "code": "OPOF0120",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["옥배유", "corn germ oil", "玉米胚芽油", "コーンジャーム油", "dầu mầm ngô"],
+    "regex": ["corn.?germ.?oil"]
+  },
+  {
+    "code": "OPOF0130",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["대두탈검유", "degummed soybean oil", "脱胶大豆油", "脱ガム大豆油", "dầu đậu nành khử gum"],
+    "regex": ["degummed.?soybean.?oil"]
+  },
+  {
+    "code": "OPOF0140",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["팜올레인유", "palm olein oil", "棕榈烯油", "パームオレイン油", "dầu olein cọ"],
+    "regex": ["palm.?olein.?oil"]
+  },
+  {
+    "code": "OPOF0150",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["트러플향유", "truffle oil", "松露油", "トリュフオイル", "dầu nấm truffle"],
+    "regex": ["truffle.?oil"]
+  },
+  {
+    "code": "OPOF0160",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["쌀눈유", "rice bran oil", "米糠油", "米ぬか油", "dầu cám gạo"],
+    "regex": ["rice.?bran.?oil"]
+  },
+  {
+    "code": "OPOF0170",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["조미유", "향미유", "flavored oil", "调味油", "フレーバーオイル", "dầu hương liệu"],
+    "regex": ["flavored.?oil"]
+  },
+
+  {
+    "code": "OPOT0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["당면", "glass noodles", "粉丝", "春雨(はるさめ)", "miến"],
+    "regex": ["glass.?noodles"]
+  },
+  {
+    "code": "OPOT0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["곤약", "konjac", "蒟蒻", "こんにゃく", "konjac"],
+    "regex": ["konjac"]
+  },
+  {
+    "code": "OPOT0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["꿀", "honey", "蜂蜜", "ハチミツ", "mật ong"],
+    "regex": ["honey"]
+  },
+  {
+    "code": "OPOT0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["프리믹스", "premix", "预混料", "プレミックス", "premix"],
+    "regex": ["premix"]
+  },
+  {
+    "code": "OPOT0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["라이스칩", "rice chip", "米片", "ライスチップ", "bánh gạo chip"],
+    "regex": ["rice.?chip"]
+  },
+  {
+    "code": "OPOT0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["구성품", "product components", "组件", "製品構成部品", "thành phần sản phẩm"],
+    "regex": ["product.?components"]
+  },
+  {
+    "code": "OPTE0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["차", "tea", "茶", "お茶", "trà"],
+    "regex": ["\\btea\\b"]
+  },
+
+  {
+    "code": "PAAD0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["계면활성제", "surfactant", "表面活性剂", "界面活性剤", "chất hoạt động bề mặt"],
+    "regex": ["surfactant"]
+  },
+  {
+    "code": "PAAD0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["고결방지제", "anti-caking agent", "防结剂", "固結防止剤", "chất chống vón"],
+    "regex": ["anti.?caking"]
+  },
+  {
+    "code": "PAAD0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["CMC", "셀룰로오스검", "羧甲基纤维素", "CMC(シーエムシー)", "CMC"],
+    "regex": ["\\bCMC\\b"]
+  },
+
+  {
+    "code": "PABB0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["잔탄검", "xanthan gum", "黄原胶", "キサンタンガム", "gum xanthan"],
+    "regex": ["xanthan.?gum"]
+  },
+  {
+    "code": "PABB0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["이스트 액상", "yeast liquid", "酵母液体", "イースト液", "men lỏng"],
+    "regex": ["yeast.?liq"]
+  },
+  {
+    "code": "PABB0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["이스트 고상", "yeast solid", "酵母固体", "イースト固形", "men rắn"],
+    "regex": ["yeast.?sol"]
+  },
+  {
+    "code": "PABB0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["이성화효소", "isomerase", "异构酶", "イソメラーゼ", "enzym isomerase"],
+    "regex": ["isomerase"]
+  },
+  {
+    "code": "PABB0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["phytase", "피테이스", "植酸酶", "フィターゼ", "phytase"],
+    "regex": ["phytase"]
+  },
+  {
+    "code": "PABB0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["spezyme", "스페자임", "酶制剂 Spezyme", "スペザイム", "spezyme"],
+    "regex": ["spezyme"]
+  },
+  {
+    "code": "PABB0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["당화효소", "amylase", "淀粉酶", "アミラーゼ", "enzyme amylase"],
+    "regex": ["amylase"]
+  },
+
+  {
+    "code": "PAFA0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["PVP", "ポリビニルピロリドン", "聚乙烯吡咯烷酮", "PVP", "PVP"],
+    "regex": ["\\bPVP\\b"]
+  },
+  {
+    "code": "PAFA0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["소포제", "antifoam", "消泡剂", "消泡剤", "chất phá bọt"],
+    "regex": ["antifoam"]
+  },
+
+  {
+    "code": "PAPS0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["염화벤잘코늄", "benzalkonium chloride", "苯扎氯铵", "塩化ベンザルコニウム", "benzalkonium chloride"],
+    "regex": ["benzalkonium.?chloride"]
+  },
+  {
+    "code": "PAPS0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["살균제", "disinfectant", "消毒剂", "消毒剤", "chất khử trùng"],
+    "regex": ["disinfectant"]
+  },
+  {
+    "code": "PAPS0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["sanisol", "사니솔", "消毒液 Sanisol", "サニソル", "sanisol"],
+    "regex": ["sanisol"]
+  },
+
+  {
+    "code": "PARG0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["pH조절제", "pH adjuster", "pH 调节剂", "pH 調整剤", "chất điều chỉnh pH"],
+    "regex": ["ph.?adjuster"]
+  },
+  {
+    "code": "PARG0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["EDTA", "에디티에이", "乙二胺四乙酸(EDTA)", "EDTA(エデト酸)", "EDTA"],
+    "regex": ["\\bEDTA\\b"]
+  },
+  {
+    "code": "PARG0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["에틸렌다이아민테트라아세트산", "EDTA", "乙二胺四乙酸", "エチレンジアミン四酢酸", "EDTA"],
+    "regex": ["ethylenediamine", "tetraacetic"]
+  },
+
+  {
+    "code": "PASO0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["제조용 solvent", "manufacturing solvent", "制造用溶剂", "製造用溶剤", "dung môi sản xuất"],
+    "regex": ["manufacturing.?solvent"]
+  },
+  {
+    "code": "PASO0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["추출용 solvent", "extraction solvent", "提取溶剂", "抽出用溶剤", "dung môi chiết xuất"],
+    "regex": ["extraction.?solvent"]
+  },
+
+  {
+    "code": "PSOT0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["아이스팩 충전재", "icepack filling", "冰袋填充物", "アイスパック充填材", "chất làm đầy túi đá"],
+    "regex": ["ice.?pack", "filling"]
+  },
+
+  {
+    "code": "SPFS0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["가쓰오부시", "katsuobushi", "柴鱼片", "鰹節", "katsuobushi"],
+    "regex": ["katsuobushi"]
+  },
+  {
+    "code": "SPFS0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["조미생선", "seasoned fish", "调味鱼", "味付け魚", "cá tẩm vị"],
+    "regex": ["seasoned.?fish"]
+  },
+  {
+    "code": "SPFS0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["생선추출물", "fish extract", "鱼提取物", "魚エキス", "chiết xuất cá"],
+    "regex": ["fish.?extract"]
+  },
+  {
+    "code": "SPFS0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["멸치분말", "anchovy powder", "鳀鱼粉", "アンチョビパウダー", "bột cá cơm"],
+    "regex": ["anchovy.?powder"]
+  },
+  {
+    "code": "SPFS0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["멸치엑기스", "anchovy extract", "鳀鱼抽取物", "アンチョビエキス", "chiết xuất cá cơm"],
+    "regex": ["anchovy.?extract"]
+  },
+  {
+    "code": "SPFS0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["참치엑기스", "tuna extract", "金枪鱼提取物", "ツナエキス", "chiết xuất cá ngừ"],
+    "regex": ["tuna.?extract"]
+  },
+
+  {
+    "code": "SPMX0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["혼합해물", "mixed seafood", "混合海鲜", "ミックスシーフード", "hải sản hỗn hợp"],
+    "regex": ["mixed.?seafood"]
+  },
+
+  {
+    "code": "SPOT0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["해물육수", "seafood broth", "海鲜汤底", "シーフードブロス", "nước dùng hải sản"],
+    "regex": ["seafood.?broth"]
+  },
+
+  {
+    "code": "SPSC0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["까나리액젓", "sand lance fish sauce", "玉筋鱼鱼露", "イカナゴ魚醤", "nước mắm cá trỏng"],
+    "regex": ["sand.?lance"]
+  },
+  {
+    "code": "SPSC0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["멸치액젓", "anchovy fish sauce", "鳀鱼鱼露", "アンチョビ魚醤", "nước mắm cá cơm"],
+    "regex": ["anchovy.?fish.?sauce"]
+  },
+  {
+    "code": "SPSC0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["새우액젓", "shrimp fish sauce", "虾鱼露", "エビ魚醤", "nước mắm tôm"],
+    "regex": ["shrimp.?fish.?sauce"]
+  },
+
+  {
+    "code": "SSCR0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["새우", "shrimp", "虾", "エビ", "tôm"],
+    "regex": ["shrimp"]
+  },
+  {
+    "code": "SSCR0011",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["흰다리새우", "vannamei", "whiteleg shrimp", "バナメイエビ", "tôm thẻ chân trắng"],
+    "regex": ["vannamei", "whiteleg"]
+  },
+  {
+    "code": "SSCR0012",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["홍새우", "red shrimp", "红虾", "赤エビ", "tôm đỏ"],
+    "regex": ["red.?shrimp"]
+  },
+  {
+    "code": "SSCR0013",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["판달루스 냉수 새우", "pandalus shrimp", "冷水虾", "パンダルスエビ", "tôm nước lạnh"],
+    "regex": ["pandalus", "cold.?water.?shrimp"]
+  },
+
+  {
+    "code": "SSCR0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["게", "crab", "蟹", "カニ", "cua"],
+    "regex": ["crab"]
+  },
+  {
+    "code": "SSCR0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["가재", "crayfish", "小龙虾", "ザリガニ", "tôm hùm đất"],
+    "regex": ["crayfish"]
+  },
+  {
+    "code": "SSCR0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["킹크랩", "king crab", "帝王蟹", "タラバガニ", "cua hoàng đế"],
+    "regex": ["king.?crab"]
+  },
+  {
+    "code": "SSCR0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["랍스터", "lobster", "龙虾", "ロブスター", "tôm hùm"],
+    "regex": ["lobster"]
+  },
+
+  {
+    "code": "SSFS0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["갈치", "gizzard shad", "刀鱼", "カマスサワラ", "cá bạc má"],
+    "regex": ["gizzard.?shad"]
+  },
+  {
+    "code": "SSFS0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["고등어", "mackerel", "鲭鱼", "サバ", "cá thu"],
+    "regex": ["mackerel"]
+  },
+  {
+    "code": "SSFS0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["굴비", "gulbi", "黄花鱼干", "グルビ", "cá khô gulbi"],
+    "regex": ["gulbi"]
+  },
+  {
+    "code": "SSFS0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["장어", "eel", "鳗鱼", "ウナギ", "lươn"],
+    "regex": ["eel"]
+  },
+  {
+    "code": "SSFS0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["옥돔", "okdom", "红喉鱼", "オクドム", "cá okdom"],
+    "regex": ["okdom"]
+  },
+  {
+    "code": "SSFS0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["조기", "yellow croaker", "黄花鱼", "黄魚", "cá đục vàng"],
+    "regex": ["croaker"]
+  },
+  {
+    "code": "SSFS0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["참치", "tuna", "金枪鱼", "マグロ", "cá ngừ"],
+    "regex": ["tuna"]
+  },
+  {
+    "code": "SSFS0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["연어", "salmon", "三文鱼", "サーモン", "cá hồi"],
+    "regex": ["salmon"]
+  },
+  {
+    "code": "SSFS0090",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["가자미", "flounder", "比目鱼", "ヒラメ", "cá bơn"],
+    "regex": ["flounder"]
+  },
+  {
+    "code": "SSFS0100",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["삼치", "spanish mackerel", "马鲛鱼", "サワラ", "cá thu Tây Ban Nha"],
+    "regex": ["spanish.?mackerel"]
+  },
+  {
+    "code": "SSFS0110",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["임연수", "atka mackerel", "狭鳕", "ホッケ", "cá hokke"],
+    "regex": ["atka.?mackerel"]
+  },
+  {
+    "code": "SSFS0120",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["틸라피아", "tilapia", "罗非鱼", "ティラピア", "cá rô phi"],
+    "regex": ["tilapia"]
+  },
+  {
+    "code": "SSFS0130",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["바사", "basa", "巴沙鱼", "バサ", "cá basa"],
+    "regex": ["basa"]
+  },
+  {
+    "code": "SSFS0140",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["멸치", "anchovy", "鳀鱼", "アンチョビ", "cá cơm"],
+    "regex": ["anchovy"]
+  },
+  {
+    "code": "SSFS0150",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["명태", "pollock", "明太鱼", "スケトウダラ", "cá minh thái"],
+    "regex": ["pollock"]
+  },
+  {
+    "code": "SSFS0170",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["알", "곤이", "fish roe", "鱼卵", "魚卵", "trứng cá"],
+    "regex": ["fish.?roe"]
+  },
+
+  {
+    "code": "SSMO0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["낙지", "small octopus", "小章鱼", "小ダコ", "bạch tuộc nhỏ"],
+    "regex": ["small.?octopus"]
+  },
+  {
+    "code": "SSMO0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["문어", "octopus", "章鱼", "タコ", "bạch tuộc"],
+    "regex": ["\\boctopus\\b"]
+  },
+  {
+    "code": "SSMO0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["오징어", "squid", "鱿鱼", "イカ", "mực"],
+    "regex": ["squid"]
+  },
+  {
+    "code": "SSMO0031",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["대왕오징어", "giant squid", "巨型鱿鱼", "ダイオウイカ", "mực khổng lồ"],
+    "regex": ["giant.?squid"]
+  },
+  {
+    "code": "SSMO0032",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["살오징어", "pacific squid", "太平洋鱿鱼", "スルメイカ", "mực Thái Bình Dương"],
+    "regex": ["pacific.?squid"]
+  },
+  {
+    "code": "SSMO0033",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["갑오징어", "cuttlefish", "墨鱼", "コウイカ", "mực nang"],
+    "regex": ["cuttle.?fish"]
+  },
+  {
+    "code": "SSMO0034",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["일반오징어", "common squid", "普通鱿鱼", "一般的なイカ", "mực thường"],
+    "regex": ["common.?squid"]
+  },
+  {
+    "code": "SSMO0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["주꾸미", "webfoot octopus", "短臂章鱼", "テナガタコ", "bạch tuộc chân ngắn"],
+    "regex": ["webfoot.?octopus"]
+  },
+
+  {
+    "code": "SSOT0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["밀키트수산", "meal kit fishery", "海鲜套餐材", "ミールキット水産", "nguyên liệu hải sản meal-kit"],
+    "regex": ["meal.?kit.?fish"]
+  },
+
+  {
+    "code": "SSSF0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["가리비", "scallop", "扇贝", "ホタテ", "sò điệp"],
+    "regex": ["scallop"]
+  },
+  {
+    "code": "SSSF0011",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["참가리비", "japanese scallop", "日本扇贝", "ホタテガイ", "sò điệp Nhật"],
+    "regex": ["japanese.?scallop"]
+  },
+  {
+    "code": "SSSF0012",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["홍가리비", "red scallop", "红扇贝", "赤ホタテ", "sò điệp đỏ"],
+    "regex": ["red.?scallop"]
+  },
+  {
+    "code": "SSSF0013",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["백가리비", "white scallop", "白扇贝", "白ホタテ", "sò điệp trắng"],
+    "regex": ["white.?scallop"]
+  },
+  {
+    "code": "SSSF0014",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["왕가리비", "jumbo scallop", "大扇贝", "ジャンボホタテ", "sò điệp lớn"],
+    "regex": ["jumbo.?scallop"]
+  },
+  {
+    "code": "SSSF0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["바지락", "clam", "蛤蜊", "アサリ", "ngao"],
+    "regex": ["clam"]
+  },
+  {
+    "code": "SSSF0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["전복", "abalone", "鲍鱼", "アワビ", "bào ngư"],
+    "regex": ["abalone"]
+  },
+  {
+    "code": "SSSF0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["참고둥", "whelk", "玉螺", "ツブ貝", "ốc whelk"],
+    "regex": ["whelk"]
+  },
+  {
+    "code": "SSSF0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["굴", "oyster", "牡蛎", "カキ", "hàu"],
+    "regex": ["oyster"]
+  },
+  {
+    "code": "SSSF0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["홍합", "mussel", "贻贝", "ムール貝", "vẹm"],
+    "regex": ["mussel"]
+  },
+  {
+    "code": "SSSF0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["꼬막", "cockle", "毛蚶", "ザル貝", "sò huyết"],
+    "regex": ["cockle"]
+  },
+  {
+    "code": "SSSF0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["소라", "conch", "海螺", "ツノガイ", "ốc tù hài"],
+    "regex": ["conch"]
+  },
+  {
+    "code": "SSSF0090",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["대합", "hard clam", "硬蛤", "ハマグリ", "ngao trắng lớn"],
+    "regex": ["hard.?clam"]
+  },
+  {
+    "code": "SSSF0100",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["키조개", "pen shell", "江珧柱", "タイラギ貝", "sò điệp quạt"],
+    "regex": ["pen.?shell"]
+  },
+  {
+    "code": "SSSF0110",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["우렁이", "freshwater snail", "田螺", "タニシ", "ốc nước ngọt"],
+    "regex": ["fresh.?water.?snail"]
+  },
+
+  {
+    "code": "SSSU0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["hake", "헤이크", "无须鳕", "ヘイク", "cá hake"],
+    "regex": ["hake"]
+  },
+  {
+    "code": "SSSU0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["명태연육", "pollock surimi", "明太鱼糜", "スケトウダラすり身", "surimi cá minh thái"],
+    "regex": ["pollock.?surimi"]
+  },
+  {
+    "code": "SSSU0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["이또요리", "itoyori", "伊东鱼", "イトヨリ", "cá itoyori"],
+    "regex": ["itoyori"]
+  },
+  {
+    "code": "SSSU0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["정어리연육", "sardine surimi", "沙丁鱼糜", "イワシすり身", "surimi cá mòi"],
+    "regex": ["sardine.?surimi"]
+  },
+  {
+    "code": "SSSU0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["풀치연육", "young pollack surimi", "小明太鱼糜", "子スケすり身", "surimi cá minh thái non"],
+    "regex": ["young.?pollack.?surimi"]
+  },
+  {
+    "code": "SSSU0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["흰살생선연육", "white fish surimi", "白身鱼糜", "白身魚すり身", "surimi cá trắng"],
+    "regex": ["white.?fish.?surimi"]
+  },
+
+  {
+    "code": "SSSW0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["다시마", "kelp", "海带", "昆布", "tảo bẹ"],
+    "regex": ["kelp"]
+  },
+  {
+    "code": "SSSW0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["미역", "brown seaweed", "裙带菜", "ワカメ", "rong nâu"],
+    "regex": ["brown.?seaweed"]
+  },
+  {
+    "code": "SSSW0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["톳", "hijiki", "羊栖菜", "ヒジキ", "rong hijiki"],
+    "regex": ["hijiki"]
+  },
+  {
+    "code": "SSSW0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["모자반", "sargassum", "马尾藻", "ホンダワラ", "rong sargassum"],
+    "regex": ["sargassum"]
+  },
+  {
+    "code": "SSSW0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["감태", "ecklonia cava", "甘苔", "カジメ", "rong ecklonia"],
+    "regex": ["ecklonia", "cava"]
+  },
+  {
+    "code": "SSSW0060",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["파래", "green laver", "石莼", "アオサ", "tảo xanh"],
+    "regex": ["green.?laver"]
+  },
+  {
+    "code": "SSSW0070",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["매생이", "sea lettuce", "海莴苣", "ウミレタス", "rong biển mềm"],
+    "regex": ["sea.?lettuce"]
+  },
+  {
+    "code": "SSSW0080",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["클로렐라", "chlorella", "小球藻", "クロレラ", "tảo chlorella"],
+    "regex": ["chlorella"]
+  },
+  {
+    "code": "SSSW0090",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["우뭇가사리", "agar", "琼脂", "寒天", "thạch agar"],
+    "regex": ["agar"]
+  },
+  {
+    "code": "SSSW0100",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["스피룰리나", "spirulina", "螺旋藻", "スピルリナ", "tảo xoắn spirulina"],
+    "regex": ["spirulina"]
+  },
+
+  {
+    "code": "UTES0010",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["석탄", "coal", "煤炭", "石炭", "than đá"],
+    "regex": ["coal"]
+  },
+  {
+    "code": "UTES0020",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["LNG", "액화천연가스", "液化天然气(LNG)", "液化天然ガス(LNG)", "khí LNG"],
+    "regex": ["\\bLNG\\b"]
+  },
+  {
+    "code": "UTES0030",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["LPG", "액화석유가스", "液化石油气(LPG)", "液化石油ガス(LPG)", "khí LPG"],
+    "regex": ["\\bLPG\\b"]
+  },
+  {
+    "code": "UTES0040",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["스팀", "steam", "蒸汽", "スチーム", "hơi nước"],
+    "regex": ["steam"]
+  },
+  {
+    "code": "UTES0050",
+    "type": "ROH1",
+    "priority": 1,
+    "keywords": ["우드칩", "woodchip", "木片", "ウッドチップ", "mảnh gỗ"],
+    "regex": ["wood.?chip"]
+  }
+]

@@ -1,9 +1,18 @@
-﻿material_name,level_1_KOR,level_2_KOR,level_3_KOR,level_1_ENG,level_2_ENG,level_3_ENG,language
-tomato,ENG,Agri,Fruiting Vegetables,Tomato
-tomato,ENG,Agri,Fruiting Vegetables,Tomato
-banana,ENG,Agri,Fruits,Banana
-tomato,ENG,Agri,Fruiting Vegetables,Tomato
-GARLIC POWDER (GRANULATED ROASTED)_PD_RT
-,ENG,Agri Processed,Processed seasoning vegetables,Garlic powder
-GARLIC POWDER (GRANULATED ROASTED)_PD_RT
-,ENG,Agri Processed,Processed seasoning vegetables,Garlic powder
+﻿material_name, material_type, lang, L1, L2, L3, L4, code, model_score, rank, status, created_at, used_at,status,used_at
+딸기,ROH1,,농산물,과실류,딸기,,AAFR0040,99.0,1,NEW,2025-12-18T13:22:29.291572,,USED,2025-12-22T13:29:07.924347
+딸기,ROH1,,농산물,과실류,딸기,,AAFR0040,99.0,1,NEW,2025-12-18T13:22:35.984612,,USED,2025-12-22T13:29:07.924347
+고춧가루,ROH1,,농산물,고추류,고춧가루,,AACV0080,13.0,1,NEW,2025-12-18T13:25:22.284738,,USED,2025-12-22T13:29:07.924347
+고춧가루,ROH1,,농산물,고추류,고춧가루,,AACV0080,13.0,1,NEW,2025-12-18T13:35:13.120782,,USED,2025-12-22T13:29:07.924347
+orange,ROH1,,Agri,Fruits,Orange,,AAFR0280,99.0,1,NEW,2025-12-18T13:35:29.708437,,USED,2025-12-22T13:29:07.924347
+orange,ROH1,,Agri,Fruits,Orange,,AAFR0280,99.0,1,NEW,2025-12-18T13:55:48.167897,,USED,2025-12-22T13:29:07.924347
+청양고추장,ROH1,,조미식품,장류,고추장,,CDFM0020,3.09,4,NEW,2025-12-19T14:03:17.387374,,USED,2025-12-22T13:29:07.924347
+orange,ROH1,,Agri,Fruits,Orange,,AAFR0280,85.0,1,NEW,2025-12-19T14:23:51.930066,,USED,2025-12-22T13:29:07.924347
+grape,ROH1,,Agri,Fruits,Grape,,AAFR0190,85.0,1,NEW,2025-12-19T15:12:27.662477,,USED,2025-12-22T13:29:07.924347
+딸기,ROH1,,농산물,과실류,딸기,,AAFR0040,85,1,NEW,2025-12-23T14:28:20.416430,
+고구마,ROH1,,농산물,뿌리채소류,고구마,,AARV0030,85,1,NEW,2025-12-23T14:30:00.835664,
+고춧가루,ROH1,,농산물,고추류,고춧가루,,AACV0080,26.24,1,NEW,2025-12-23T14:30:56.723413,
+딸기,ROH1,,농산물,과실류,딸기,,AAFR0040,85,1,NEW,2025-12-23T16:43:41.185056,
+고사리,ROH1,,농산물,기타농산물,나물류,,AAOT0010,1.49,26,NEW,2025-12-24T14:29:47.633992,
+고사리,ROH1,,농산물,기타농산물,나물류,,AAOT0010,1.49,26,NEW,2025-12-24T14:29:54.278972,
+딸기,ROH1,,농산물,과실류,딸기,,AAFR0040,85,1,NEW,2025-12-25T14:07:23.564595,
+고추가루,ROH1,,농산물,고추류,고춧가루,,AACV0080,19.7,12,NEW,2025-12-29T15:59:04.047011,

@@ -1,55 +1,113 @@
-# 반드시 존재해야 할 파일
-trained_model/ (학습 완료 후 자동 생성됨)
-faiss_index.bin와 faiss_mapping.json
-이 두 개는 build_faiss_index.py 실행으로 생성됨
+# CJ 자재 카테고리 자동 분류 시스템 - 폴더 구조
 
-# 실행순서 (최초 1회)
-# 1. 모델 학습
-python -m train.init_train
-# 2. FAISS 인덱스 구축
-python -m train.build_faiss_index
-# 3. UI 실행 (Main Launcher)
-python -m scripts.main
+# ============================================
+# 필수 파일 (학습 완료 후 자동 생성)
+# ============================================
+# - models/trained_model/ (학습된 SentenceTransformer 모델)
+# - models/faiss_KR_index.bin, models/faiss_KR_mapping.json (한글 인덱스)
+# - models/faiss_EN_index.bin, models/faiss_EN_mapping.json (영문 인덱스)
+# 위 파일들은 build_faiss_index.py 실행으로 생성됨
 
+# ============================================
+# 실행 순서
+# ============================================
+# 1. 초기 모델 학습 (최초 1회)
+#    python train/train_triplet_model.py
+#
+# 2. FAISS 인덱스 구축 (KR/EN 각각)
+#    python train/build_faiss_index.py --lang KR
+#    python train/build_faiss_index.py --lang EN
+#
+# 3. 재학습 (피드백 반영 후)
+#    python admin/retrain.py  # 전체 파이프라인 자동 실행
+#
+# 4. UI 실행 (Streamlit)
+#    streamlit run app.py
+
+# ============================================
+# 폴더 구조
+# ============================================
 cjCategoryMapping/
 │
-├── train/                   # 모델 학습 관련 코드
-│   ├── __init__.py           # 패키지 인식용 (비어있어도 반드시 필요)
-│   ├── build_faiss_index.py  # FAISS 인덱스 생성 스크립트 / 재학습 모델로 FAISS 인덱스 다시 구축
-│   ├── train_model.py        # 모델 학습 스크립트 / 피드백으로 모델 재학습 (fine-tuning)
-│   ├── generate_training_data.py  # 훈련 데이터 생성 스크립트 / 사용자 피드백 기반 학습 데이터 생성
-│   ├── init_train.py         # 학습 초기화 스크립트 (옵션 세팅 등) / 최초 Pretrained 모델로 기본 모델 저장
+├── app.py                          # Streamlit 기반 웹 UI (메인 실행 파일)
 │
-├── ui/                       # 사용자 인터페이스(UI) 관련 코드
-│   ├── __init__.py            # 패키지 인식용
-│   ├── ui.py                  # 사용자 입력 및 결과 출력 인터페이스 / GUI 프로그램 — 사용자 입력 받고 결과 보여줌, 재학습까지 클릭으로 가능
+├── train/                          # 모델 학습 관련 코드
+│   ├── __init__.py                 # 패키지 인식용
+│   ├── train_triplet_model.py      # Triplet Loss 기반 모델 학습 스크립트
+│   └── build_faiss_index.py        # FAISS 인덱스 생성 스크립트 (KR/EN 분리)
 │
-├── data/                      # 데이터 파일 저장 폴더
-│   ├── category.csv            # 분류 카테고리 데이터
-│   ├── training_data.csv       # 학습에 사용할 훈련 데이터
-│   ├── user_feedback.csv       # 사용자 피드백 수집 데이터 (초기엔 비어 있어도 파일 필요)
+├── generate/                       # 학습 데이터 생성
+│   └── generate_triplet_data.py    # Triplet 학습 데이터 생성 (Basic/Hard/Feedback)
 │
-├── models/                     # 모델, 인덱스, 체크포인트 파일
-│   ├── __init__.py              # 패키지 인식용
-│   ├── trained_model/           # 최종 학습된 모델 저장 폴더 (config.json, pytorch_model.bin 등)
-│   ├── checkpoints/             # 학습 중간 체크포인트 저장 폴더
-│   ├── faiss_index.bin          # FAISS 인덱스 파일 (검색용 벡터 저장)
-│   ├── faiss_mapping.json       # 인덱스 ➔ 카테고리 매핑 JSON 파일
-│   ├── faiss_metadata.csv       # 인덱스 메타데이터 CSV (카테고리 정보 포함)
+├── admin/                          # 관리자 스크립트
+│   └── retrain.py                  # 전체 재학습 파이프라인 자동화
+│                                    # (Triplet 생성 → 학습 → 인덱스 구축)
 │
-├── scripts/                     # 프로젝트 실행/테스트 스크립트
-│   ├── __init__.py               # 패키지 인식용
-│   ├── main.py                   # 메인 실행 파일 (UI 호출, 모델 로딩 등) / 모델 + 인덱스 로드 → 자재명 분류 기능
-│   ├── test.py                   # 테스트/디버깅용 스크립트
-│   ├── download_model.py         # hugging face에서 모델다운로드
-│   ├── upload_model.py           # hugging face에서 모델업로드
-│   ├── move_files.py             # 폴더 구조 변경 자동화 스크립트 (파일 이동용)
+├── scripts/                        # 핵심 비즈니스 로직
+│   ├── __init__.py                 # 패키지 인식용
+│   └── main.py                     # 분류 엔진 (모델 로드, FAISS 검색, 규칙 적용)
 │
-├── docs/                         # 프로젝트 문서 폴더
-│   ├── 폴더구조.txt               # 폴더구조 설명 문서
+├── data/                           # 데이터 파일 저장 폴더
+│   ├── category.csv                # 카테고리 마스터 데이터 (L1~L4, CODE, TYPE)
+│   ├── materials.csv               # 자재 데이터 (학습용)
+│   ├── user_feedback.csv           # 사용자 피드백 수집 데이터 (NEW/USED/PROPOSED 상태)
+│   ├── triplet_training_data.csv   # Triplet 학습 데이터 (generate_triplet_data.py로 생성)
+│   ├── rule_base.json              # 규칙 기반 매칭 규칙 (키워드 → CODE 매핑)
+│   └── new_category_suggestions.csv # 새 카테고리 제안 데이터
 │
-├── .gitattributes                 # Git 속성 설정 파일 (ex: LFS 설정)
-├── .gitignore                     # Git 업로드 제외 파일 설정 (venv, __pycache__ 등)
-├── requirements.txt               # 프로젝트 의존성 패키지 목록
-├── venv/                           # Python 가상환경 폴더 (Git에 업로드 제외)
-└── __pycache__/                    # Python 캐시 파일 폴더 (Git에 업로드 제외)
+├── models/                         # 모델 및 인덱스 파일
+│   ├── trained_model/              # 학습된 SentenceTransformer 모델
+│   │   ├── config.json
+│   │   ├── config_sentence_transformers.json
+│   │   ├── model.safetensors
+│   │   ├── tokenizer.json
+│   │   ├── tokenizer_config.json
+│   │   ├── sentencepiece.bpe.model
+│   │   └── ... (기타 모델 파일들)
+│   ├── faiss_KR_index.bin          # 한글 카테고리 FAISS 인덱스
+│   ├── faiss_KR_mapping.json       # 한글 인덱스 → 카테고리 매핑
+│   ├── faiss_EN_index.bin          # 영문 카테고리 FAISS 인덱스
+│   └── faiss_EN_mapping.json       # 영문 인덱스 → 카테고리 매핑
+│
+├── checkpoints/                    # 학습 중간 체크포인트 (선택사항)
+│   └── model/
+│
+├── docs/                           # 프로젝트 문서
+│   └── 폴더구조.txt                # 이 파일
+│
+├── requirements.txt                # Python 의존성 패키지 목록
+├── venv/                           # Python 가상환경 (Git 제외)
+└── __pycache__/                    # Python 캐시 파일 (Git 제외)
+
+# ============================================
+# 주요 파일 설명
+# ============================================
+# app.py
+#   - Streamlit 웹 UI
+#   - 자재명 입력 → 분류 결과 표시 → 피드백 수집
+#
+# scripts/main.py
+#   - classify_material(): 자재명 분류 메인 함수
+#   - 언어 감지, 전처리, 임베딩, FAISS 검색, 규칙 적용
+#
+# train/train_triplet_model.py
+#   - SentenceTransformer 파인튜닝
+#   - Triplet Loss 기반 학습
+#   - 피드백 수에 따라 epoch 자동 조정
+#
+# train/build_faiss_index.py
+#   - 카테고리 라벨 임베딩 생성
+#   - FAISS 인덱스 구축 (KR/EN 분리)
+#   - 인덱스-카테고리 매핑 JSON 생성
+#
+# generate/generate_triplet_data.py
+#   - Basic Triplets: 같은 카테고리 내 유사도 학습
+#   - Hard Triplets: 유사 카테고리 간 구분 학습
+#   - Feedback Triplets: 사용자 피드백 기반 (가중치 20배)
+#
+# admin/retrain.py
+#   - 전체 재학습 파이프라인 자동화
+#   1) Triplet 데이터 생성
+#   2) 모델 학습
+#   3) FAISS 인덱스 생성 (KR)
+#   4) FAISS 인덱스 생성 (EN)
