@@ -52,7 +52,7 @@ def save_feedback_to_csv(material_name, material_type, category_data, status="NE
                     "material_name", "material_type", "lang",
                     "L1", "L2", "L3", "L4", "code",
                     "model_score", "rank",
-                    "status", "created_at", "used_at"
+                    "status", "created_at", "used_at", "new_category"
                 ])
             
             # 데이터 행 작성
@@ -71,6 +71,7 @@ def save_feedback_to_csv(material_name, material_type, category_data, status="NE
                     status,
                     datetime.now().isoformat(),
                     "",
+                    "",  # new_category (NEW 상태에서는 빈 값)
                 ])
             elif status == "PROPOSED":
                 writer.writerow([
@@ -84,6 +85,7 @@ def save_feedback_to_csv(material_name, material_type, category_data, status="NE
                     status,
                     datetime.now().isoformat(),
                     "",
+                    category_data.get("new_category", ""),  # new_category 저장
                 ])
         
         return True
