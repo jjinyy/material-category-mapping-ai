@@ -1,0 +1,26 @@
+# Render Blueprint — 카테고리 매핑 Streamlit 앱
+# https://dashboard.render.com 에서 GitHub 연결 후 자동 배포 가능
+#
+# 사용법:
+# 1. https://dashboard.render.com → New → Web Service
+# 2. GitHub 저장소 연결 (jjinyy/categoryMapping)
+# 3. 아래 설정이 자동으로 채워지거나, 수동으로 동일하게 입력
+#    - Build Command: pip install -r requirements.txt
+#    - Start Command: streamlit run app.py --server.port=$PORT --server.address=0.0.0.0
+#
+# 주의: models/ (학습된 모델, FAISS 인덱스)는 Git에 없으므로,
+#       첫 배포 전 로컬에서 학습 후 models/ 를 커밋하거나,
+#       Render 빌드 단계에서 스크립트로 생성해야 분류 기능이 동작합니다.
+
+services:
+  - type: web
+    name: cj-category-mapping
+    runtime: python
+    plan: free
+
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port=$PORT --server.address=0.0.0.0
+
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.0"
