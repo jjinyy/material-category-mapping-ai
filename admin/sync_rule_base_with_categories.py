@@ -22,11 +22,6 @@ def _load_categories(category_csv: str) -> pd.DataFrame:
 
 
 def _build_label_maps(df_cat: pd.DataFrame) -> Tuple[Dict[str, List[Tuple[str, str]]], Dict[str, str]]:
-    """
-    Returns:
-      label_to_codes: normalized label -> list of (code, type)
-      code_to_type: code -> type
-    """
     code_to_type = dict(zip(df_cat["CODE"].astype(str), df_cat["TYPE"].astype(str)))
 
     label_to_codes: Dict[str, List[Tuple[str, str]]] = defaultdict(list)
@@ -53,18 +48,6 @@ def sync_rule_base_with_categories(
     output_json: str | None = None,
     report_json: str | None = None,
 ) -> dict:
-    """
-    category.csv를 기준으로 rule_base.json을 정리/동기화합니다.
-
-    수행 작업:
-    1) category.csv에 없는 code를 참조하는 규칙은 keyword(L3/L4)로 code 자동 교정 시도
-    2) keyword 충돌(같은 keyword가 여러 code)에 대해, category.csv(L3/L4) 기준으로 "정답 code"가 있으면
-       그 code 규칙에만 keyword를 남기고 나머지 규칙에서는 제거
-    3) 그래도 남는 충돌은 파일 순서 기준(첫 등장 rule 유지, 이후 rule에서 keyword 제거)
-
-    Note:
-    - `scripts/main.py`는 rule keywords 매칭만 사용하므로, 여기서는 keywords 중심으로 정리합니다.
-    """
     df_cat = _load_categories(category_csv)
     label_to_codes, code_to_type = _build_label_maps(df_cat)
     codes = set(code_to_type.keys())

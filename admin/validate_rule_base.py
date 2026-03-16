@@ -14,14 +14,6 @@ def validate_rule_base(
     rule_base_json: str,
     fail_on_missing_code: bool = False,
 ) -> dict:
-    """
-    rule_base.json 전수 검증:
-    - category.csv에 없는 code 참조 (가장 흔한 '빈칸' 원인)
-    - type 불일치 (ROH1 규칙이 ROH2 code를 가리키는 등)
-    - keywords 중복/충돌 (같은 키워드가 서로 다른 code를 가리킴)
-    - 형식 문제 (필수 키 누락 등)
-    """
-
     df_cat = pd.read_csv(category_csv, encoding="utf-8-sig")
     if df_cat.empty:
         raise ValueError(f"category.csv is empty: {category_csv}")
@@ -39,7 +31,6 @@ def validate_rule_base(
     type_mismatch = []
     malformed = []
 
-    # keyword 충돌 검사 (정확 일치 기준)
     kw_to_codes = defaultdict(set)
 
     for i, r in enumerate(rules):

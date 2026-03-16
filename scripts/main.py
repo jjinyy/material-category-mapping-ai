@@ -1,6 +1,4 @@
-"""
-main.py — 완전 수정 버전
-"""
+# classification entry
 
 import faiss
 import json
@@ -10,23 +8,16 @@ import os
 import sys
 import numpy as np
 
-# 프로젝트 루트를 경로에 추가하여 config 모듈 import 가능하게 함
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import config
 from utils.text_utils import detect_language, preprocess_material_name, cleanse_text
 
-# ---------------------------------------
-# GLOBALS
-# ---------------------------------------
 MODEL = None
 FAISS_CACHE = {}
 RULE_DATA = None
 RULE_MTIME = None
 
 
-# ---------------------------------------
-# 모델 로드
-# ---------------------------------------
 def load_model():
     global MODEL
 
@@ -49,9 +40,6 @@ def load_model():
     return MODEL
 
 
-# ---------------------------------------
-# 언어별 FAISS + MAPPING 로드
-# ---------------------------------------
 def load_faiss_index(lang):
     global FAISS_CACHE
 
@@ -89,9 +77,6 @@ def load_faiss_index(lang):
     return index, mapping
 
 
-# ---------------------------------------
-# 규칙 기반 로드
-# ---------------------------------------
 def load_rules():
     global RULE_DATA
     global RULE_MTIME
@@ -128,16 +113,8 @@ def load_rules():
     return RULE_DATA
 
 
-# ---------------------------------------
-# 규칙 기반 override
-# ---------------------------------------
 def apply_rule(material_name, material_type, ml_results, lang):
-    """
-    규칙이 매칭되면 해당 카테고리를 항상 1등으로 노출, 점수는 ML 1등보다 살짝만 높게.
-    - 규칙 코드가 ML 결과에 없으면: 지지선으로 추가, score = ML 1등 + margin.
-    - 규칙 코드가 ML 결과에 있으면: 1등으로 올리고, score = ML 1등 + margin (일관된 UX).
-    """
-
+    """Rule match → that category 1st, score = ML top + margin."""
     RULE_CAP = getattr(config, "RULE_CAP", 0.97)
     only_if_in_ml = getattr(config, "RULE_APPLY_ONLY_IF_IN_ML", True)
     fallback_margin = getattr(config, "RULE_FALLBACK_MARGIN", 0.01)
@@ -146,13 +123,7 @@ def apply_rule(material_name, material_type, ml_results, lang):
     name = material_name.lower()
 
     matched_code = None
-
-    # -----------------------
-    # Rule 매칭
-    # -----------------------
     for rule in rules:
-
-        # TYPE 매칭
         if rule.get("type") and material_type and rule["type"] != material_type:
             continue
 
@@ -174,9 +145,6 @@ def apply_rule(material_name, material_type, ml_results, lang):
     if not matched_code:
         return ml_results
 
-    # -----------------------
-    # ML 결과에 규칙 코드 존재 여부
-    # -----------------------
     existing_score = None
     for r in ml_results:
         if r["CODE"] == matched_code:
@@ -202,51 +170,25 @@ def apply_rule(material_name, material_type, ml_results, lang):
             "score_source": source,
         }
 
-    # ML 결과에 없음 → 지지선으로만 목록에 추가
     if only_if_in_ml and existing_score is None:
-        # ML 1등 점수보다 "살짝만" 높게 설정 (바닥값 없이, 항상 1등보다 살짝 높은 점수만)
         top_ml_score = max((r["Score"] for r in ml_results), default=0.0)
         score = min(top_ml_score + fallback_margin, RULE_CAP)
         fallback_row = _make_rule_row(score, "rule_fallback")
         out = [r for r in ml_results if r["CODE"] != matched_code]
         out.append(fallback_row)
         out.sort(key=lambda x: x["Score"], reverse=True)
-        print(
-            f"[RULE] '{material_name}' → CODE {matched_code} "
-            f"(ML 상위 없음, 지지선 score={score:.4f}로 목록에 추가; top_ml={top_ml_score:.4f})"
-        )
         return out
 
-    # 규칙 코드가 ML에 있음 → 1등으로 올리고, 점수는 ML 1등보다 살짝만 높게 (메밀 등 규칙 매칭 시 항상 1등)
     top_ml_score = max((r["Score"] for r in ml_results), default=0.0)
     score = min(top_ml_score + fallback_margin, RULE_CAP)
     override = _make_rule_row(score, "rule_override")
     filtered = [r for r in ml_results if r["CODE"] != matched_code]
-    print(f"[RULE] '{material_name}' → CODE {matched_code} 1등 (score={score:.4f}, ML 1등={top_ml_score:.4f})")
     return [override] + filtered
 
 
 
 
-# ---------------------------------------
-# 메인 분류 함수
-# ---------------------------------------
 def classify_material(material_name, selected_type=None, top_n=None):
-    """
-    자재명을 입력받아 카테고리를 분류합니다.
-    
-    Args:
-        material_name: 분류할 자재명
-        selected_type: 필터링할 자재 타입 (ROH1, ROH2) 또는 None
-        top_n: 반환할 최대 결과 수 (None이면 config.CLASSIFICATION_TOP_N 사용)
-    
-    Returns:
-        list: 카테고리 정보 딕셔너리 리스트 (CODE, TYPE, L1~L4, Score 포함)
-    
-    Raises:
-        ValueError: 입력값이 유효하지 않은 경우
-        RuntimeError: 모델 또는 인덱스 로드 실패 시
-    """
     if not material_name or not isinstance(material_name, str):
         raise ValueError("[ERROR] 자재명은 비어있지 않은 문자열이어야 합니다.")
     
@@ -294,17 +236,12 @@ def classify_material(material_name, selected_type=None, top_n=None):
                 "Score": 1 / (1 + dist)
             })
 
-        # --- RULE 적용 ---
         try:
             results = apply_rule(material_name, selected_type, results, lang)
         except Exception as e:
             print(f"[RULE] WARN: 규칙 적용 중 오류 발생 (계속 진행): {e}")
 
-        # --- 정렬 ---
-        # 최종 순서는 항상 ML 점수 기준 (규칙은 후보를 추가하는 지지선 역할)
         results = sorted(results, key=lambda x: x["Score"], reverse=True)
-        
-        # 결과가 비어있으면 경고 (디버깅용)
         if not results:
             print(f"[WARN] 분류 결과가 없습니다. 입력: '{material_name}', 타입: {selected_type}")
             print(f"[WARN] 전처리 결과: '{processed}', 언어: {lang}")
@@ -318,9 +255,6 @@ def classify_material(material_name, selected_type=None, top_n=None):
         raise RuntimeError(f"[ERROR] 분류 중 예상치 못한 오류 발생: {e}")
 
 
-# ---------------------------------------
-# CLI TEST
-# ---------------------------------------
 if __name__ == "__main__":
     q = input("자재명을 입력하세요: ")
     for r in classify_material(q):
