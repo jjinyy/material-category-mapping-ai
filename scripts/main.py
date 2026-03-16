@@ -21,6 +21,7 @@ from utils.text_utils import detect_language, preprocess_material_name, cleanse_
 MODEL = None
 FAISS_CACHE = {}
 RULE_DATA = None
+RULE_MTIME = None
 
 
 # ---------------------------------------
@@ -93,25 +94,36 @@ def load_faiss_index(lang):
 # ---------------------------------------
 def load_rules():
     global RULE_DATA
+    global RULE_MTIME
 
-    if RULE_DATA is None:
-        rule_path = str(config.RULE_BASE_JSON)
+    rule_path = str(config.RULE_BASE_JSON)
+    try:
+        mtime = os.path.getmtime(rule_path)
+    except Exception:
+        mtime = None
+
+    # RULE_DATA가 없거나, 파일이 변경되었으면 재로딩
+    if RULE_DATA is None or (mtime is not None and RULE_MTIME != mtime):
         try:
             with open(rule_path, "r", encoding="utf-8") as f:
                 RULE_DATA = json.load(f)
+            RULE_MTIME = mtime
             print(f"[RULE] Loaded: {rule_path} ({len(RULE_DATA)} rules)")
         except FileNotFoundError:
             print(f"[RULE] WARN: 규칙 파일을 찾을 수 없습니다: {rule_path}")
             print("[RULE] 규칙 기반 매칭을 사용하지 않습니다.")
             RULE_DATA = []
+            RULE_MTIME = mtime
         except json.JSONDecodeError as e:
             print(f"[RULE] ERROR: 규칙 파일 JSON 파싱 실패 ({rule_path}): {e}")
             print("[RULE] 규칙 기반 매칭을 사용하지 않습니다.")
             RULE_DATA = []
+            RULE_MTIME = mtime
         except Exception as e:
             print(f"[RULE] ERROR: 규칙 파일 읽기 실패 ({rule_path}): {e}")
             print("[RULE] 규칙 기반 매칭을 사용하지 않습니다.")
             RULE_DATA = []
+            RULE_MTIME = mtime
 
     return RULE_DATA
 
@@ -121,17 +133,14 @@ def load_rules():
 # ---------------------------------------
 def apply_rule(material_name, material_type, ml_results, lang):
     """
-    Rule은 보조 수단으로만 사용됩니다.
-    
-    우선순위:
-    1. ML 결과가 있으면 → 규칙으로 점수 보정만 (메인은 ML)
-    2. ML 결과가 없으면 → 규칙으로 임시 결과 생성 (보조, 학습 개선 필요)
-    
-    재학습을 통해 ML 모델이 개선되면 규칙 의존도가 줄어듭니다.
+    규칙이 매칭되면 해당 카테고리를 항상 1등으로 노출, 점수는 ML 1등보다 살짝만 높게.
+    - 규칙 코드가 ML 결과에 없으면: 지지선으로 추가, score = ML 1등 + margin.
+    - 규칙 코드가 ML 결과에 있으면: 1등으로 올리고, score = ML 1등 + margin (일관된 UX).
     """
 
-    RULE_FLOOR = config.RULE_FLOOR
-    RULE_CAP = config.RULE_CAP
+    RULE_CAP = getattr(config, "RULE_CAP", 0.97)
+    only_if_in_ml = getattr(config, "RULE_APPLY_ONLY_IF_IN_ML", True)
+    fallback_margin = getattr(config, "RULE_FALLBACK_MARGIN", 0.01)
 
     rules = load_rules()
     name = material_name.lower()
@@ -147,17 +156,13 @@ def apply_rule(material_name, material_type, ml_results, lang):
         if rule.get("type") and material_type and rule["type"] != material_type:
             continue
 
-        # 한글과 영문 모두 처리 가능하도록 개선
-        # 한글의 경우 직접 문자열 포함 여부로 체크
         for kw in rule.get("keywords", []):
             kw_lower = kw.lower()
-            # 한글 키워드는 직접 포함 여부로 체크
             if any(ord(c) >= 0xAC00 and ord(c) <= 0xD7A3 for c in kw):
                 if kw in name or kw_lower in name:
                     matched_code = rule["code"]
                     break
             else:
-                # 영문/숫자는 단어 단위로 체크
                 words = re.findall(r"\w+", name)
                 if kw_lower in words or kw_lower in name:
                     matched_code = rule["code"]
@@ -166,12 +171,11 @@ def apply_rule(material_name, material_type, ml_results, lang):
         if matched_code:
             break
 
-    # Rule 매칭 없으면 그대로 반환
     if not matched_code:
         return ml_results
 
     # -----------------------
-    # 기존 ML 결과에서 점수 가져오기
+    # ML 결과에 규칙 코드 존재 여부
     # -----------------------
     existing_score = None
     for r in ml_results:
@@ -179,42 +183,46 @@ def apply_rule(material_name, material_type, ml_results, lang):
             existing_score = r["Score"]
             break
 
-    # ML 결과에 없으면 규칙 기반 점수 사용 (보조 수단)
-    # 이 경우는 재학습을 통해 ML 모델이 개선되어야 함
-    if existing_score is None:
-        existing_score = RULE_FLOOR
-        print(f"[RULE] 보조 매칭: '{material_name}' → CODE {matched_code} (ML 결과 없음, 재학습 권장)")
-
-    adjusted_score = min(
-        max(existing_score, RULE_FLOOR),
-        RULE_CAP
-    )
-
-    # -----------------------
-    # 카테고리 정보 로드
-    # -----------------------
     _, mapping = FAISS_CACHE[lang]
     matched_item = None
-
     for item in mapping.values():
         if item["CODE"] == matched_code:
             matched_item = item
             break
 
-    override = {
-        "CODE": matched_code,
-        "TYPE": material_type,
-        "L1": matched_item.get("L1", "") if matched_item else "",
-        "L2": matched_item.get("L2", "") if matched_item else "",
-        "L3": matched_item.get("L3", "") if matched_item else "",
-        "L4": matched_item.get("L4", "") if matched_item else "",
-        "Score": adjusted_score,
-        "score_source": "rule",   # ★ 나중에 분석 / 디버깅용
-    }
+    def _make_rule_row(score, source="rule"):
+        return {
+            "CODE": matched_code,
+            "TYPE": material_type,
+            "L1": matched_item.get("L1", "") if matched_item else "",
+            "L2": matched_item.get("L2", "") if matched_item else "",
+            "L3": matched_item.get("L3", "") if matched_item else "",
+            "L4": matched_item.get("L4", "") if matched_item else "",
+            "Score": score,
+            "score_source": source,
+        }
 
-    # 기존 결과에서 동일 CODE 제거
+    # ML 결과에 없음 → 지지선으로만 목록에 추가
+    if only_if_in_ml and existing_score is None:
+        # ML 1등 점수보다 "살짝만" 높게 설정 (바닥값 없이, 항상 1등보다 살짝 높은 점수만)
+        top_ml_score = max((r["Score"] for r in ml_results), default=0.0)
+        score = min(top_ml_score + fallback_margin, RULE_CAP)
+        fallback_row = _make_rule_row(score, "rule_fallback")
+        out = [r for r in ml_results if r["CODE"] != matched_code]
+        out.append(fallback_row)
+        out.sort(key=lambda x: x["Score"], reverse=True)
+        print(
+            f"[RULE] '{material_name}' → CODE {matched_code} "
+            f"(ML 상위 없음, 지지선 score={score:.4f}로 목록에 추가; top_ml={top_ml_score:.4f})"
+        )
+        return out
+
+    # 규칙 코드가 ML에 있음 → 1등으로 올리고, 점수는 ML 1등보다 살짝만 높게 (메밀 등 규칙 매칭 시 항상 1등)
+    top_ml_score = max((r["Score"] for r in ml_results), default=0.0)
+    score = min(top_ml_score + fallback_margin, RULE_CAP)
+    override = _make_rule_row(score, "rule_override")
     filtered = [r for r in ml_results if r["CODE"] != matched_code]
-
+    print(f"[RULE] '{material_name}' → CODE {matched_code} 1등 (score={score:.4f}, ML 1등={top_ml_score:.4f})")
     return [override] + filtered
 
 
@@ -293,6 +301,7 @@ def classify_material(material_name, selected_type=None, top_n=None):
             print(f"[RULE] WARN: 규칙 적용 중 오류 발생 (계속 진행): {e}")
 
         # --- 정렬 ---
+        # 최종 순서는 항상 ML 점수 기준 (규칙은 후보를 추가하는 지지선 역할)
         results = sorted(results, key=lambda x: x["Score"], reverse=True)
         
         # 결과가 비어있으면 경고 (디버깅용)

@@ -21,5 +21,8 @@ models/faiss_*
 # Generated data files
 data/triplet_training_data.csv
 
+# 로그인 계정 (비밀번호 해시 포함 — 보안상 Git 제외)
+data/users.csv
+
 # Checkpoints
 checkpoints/

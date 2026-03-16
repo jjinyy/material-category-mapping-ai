@@ -27,6 +27,7 @@ CATEGORY_CSV = DATA_DIR / "category.csv"
 MATERIALS_CSV = DATA_DIR / "materials.csv"
 RULE_BASE_JSON = DATA_DIR / "rule_base.json"
 USER_FEEDBACK_CSV = DATA_DIR / "user_feedback.csv"
+USERS_CSV = DATA_DIR / "users.csv"  # 로그인 계정 (username, password_hash)
 TRIPLET_TRAINING_DATA_CSV = DATA_DIR / "triplet_training_data.csv"
 NEW_CATEGORY_SUGGESTIONS_CSV = DATA_DIR / "new_category_suggestions.csv"
 
@@ -37,10 +38,17 @@ NEW_CATEGORY_SUGGESTIONS_CSV = DATA_DIR / "new_category_suggestions.csv"
 CLASSIFICATION_TOP_N = 50  # 기본 반환 결과 수
 
 # ============================================
-# 규칙 기반 매칭 설정
+# 규칙 기반 매칭 설정 (ML 우선, 규칙은 지지선)
 # ============================================
-RULE_FLOOR = 0.85  # 규칙 적용 시 최소 점수
-RULE_CAP = 0.97    # 규칙 적용 시 최대 점수 (절대 1.0 금지)
+RULE_FLOOR = 0.85   # 규칙으로 1등 올릴 때 최소 표시 점수 (규칙 코드가 ML에 있을 때만)
+RULE_CAP = 0.97     # 규칙 적용 시 최대 점수 (절대 1.0 금지)
+# 규칙 코드가 ML 결과에 없으면 1등으로 올리지 않고, 지지선 점수로만 목록에 추가
+RULE_APPLY_ONLY_IF_IN_ML = True
+# False = ML 우선. ML 1등이 규칙과 다르면 규칙으로 순서 변경 안 함
+RULE_OVERRIDE_ML_ORDER = False
+# ML 상위에 없을 때 규칙 지지선 점수 = (ML 1등 점수 + RULE_FALLBACK_MARGIN), 상한 RULE_CAP
+# (바닥 없이 항상 "ML 1등보다 살짝만 높은" 점수로 표시)
+RULE_FALLBACK_MARGIN = 0.01  # 0.01 ≒ 화면 1% (예: ML 1등 6.43% → 규칙 7.43%)
 
 # ============================================
 # 학습 데이터 생성 설정
