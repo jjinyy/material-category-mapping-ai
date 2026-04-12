@@ -37,9 +37,9 @@ def run_step(description, func, *args, **kwargs):
     
     try:
         func(*args, **kwargs)
-        print(f"✅ 완료: {description}")
+        print(f"완료: {description}")
     except Exception as e:
-        print(f"❌ 실패: {description}")
+        print(f"실패: {description}")
         print(f"   에러: {e}")
         import traceback
         traceback.print_exc()
@@ -48,7 +48,7 @@ def run_step(description, func, *args, **kwargs):
 
 def main():
     print("\n===================================")
-    print("   CJ Material Category 재학습 시작")
+    print("   Material Category 재학습 시작")
     print("===================================\n")
 
     # 1) Triplet 생성
