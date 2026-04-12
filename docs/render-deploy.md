@@ -8,7 +8,7 @@
 2. **New +** → **Web Service** 선택
 3. **Connect a repository**에서 GitHub 계정 연결 후 `categoryMapping` 저장소 선택
 4. 아래처럼 설정 (또는 저장소의 `render.yaml` 사용 시 일부 자동 채워짐)
-   - **Name**: `cj-category-mapping` (원하는 이름 가능)
+   - **Name**: `category-mapping` (원하는 이름 가능)
    - **Runtime**: Python
    - **Build Command**: `pip install -r requirements.txt`
    - **Start Command**: `streamlit run app.py --server.port=$PORT --server.address=0.0.0.0`
