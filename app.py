@@ -24,7 +24,7 @@ import scripts.main as main
 # --------------------------------------
 # 로그인 (인증) Helper
 # --------------------------------------
-AUTH_SALT = "cj_category_mapping_2025"
+AUTH_SALT = "category_mapping_2025"
 
 
 def _hash_password(password: str) -> str:
@@ -168,7 +168,7 @@ def save_feedback_to_csv(material_name, material_type, category_data, status="NE
 # Streamlit 기본 설정
 # --------------------------------------
 st.set_page_config(
-    page_title="CJ 자재 카테고리 자동 분류",
+    page_title="자재 카테고리 자동 분류",
     layout="wide",
     page_icon="📦",
 )
@@ -554,7 +554,7 @@ if st.session_state.get("view") == "dashboard":
 # (메인 분류 화면에서만 Title + 입력 영역 표시)
 # --------------------------------------
 if st.session_state.get("view", "main") == "main":
-    st.markdown("<div class='main-title'>CJ 자재 카테고리 자동 분류 시스템</div>", unsafe_allow_html=True)
+    st.markdown("<div class='main-title'>자재 카테고리 자동 분류 시스템</div>", unsafe_allow_html=True)
     st.markdown("<div class='sub-title'>AI 기반으로 자재명을 분석하여 최적의 카테고리를 추천합니다.</div>", unsafe_allow_html=True)
 
 with st.container():
