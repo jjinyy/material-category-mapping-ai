@@ -49,7 +49,7 @@ maintaining structural consistency across the category tree.
 ## Results
 
 - Dataset: ~**100K** multilingual material records
-- Classification accuracy: **80%+** within standardized category schema
+- Classification accuracy: **95%+** within standardized category schema
 - Manual classification process replaced with automated pipeline
 - Human-in-the-loop design enables continuous accuracy improvement
 
